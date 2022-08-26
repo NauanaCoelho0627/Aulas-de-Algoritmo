@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade03</title>
+</head>
+<body>
+    Diga seu filme favorito <br><br>
+
+    Filme: <input id="in_filme"><br><br>
+
+    Diga também quantas vezes você assistiu <br><br>
+
+    Quantidade assistida: <input id="in_qntd"><br><br>
+
+    Qual a ultima vez que você assistio?<br><br>
+
+    Ultimo vez: <input id="in_ultima">
+    <br><br>
+
+    <button onclick="filmes()">Analisar Filme</button>
+
+</body>
+</html>
+<script>
+    function filmes(){
+        alert(`Você ja assistiu ${in_filme.value} pela ultima vez em ${in_ultima.value}, e ja assistiu ${in_qntd.value} vezes`)
+    }
+</script>

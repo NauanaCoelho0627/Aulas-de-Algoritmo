@@ -1,0 +1,22 @@
+
+
+
+Crie um sistema que peça nome, altura, idade de uma pessoa.
+peça também as notas dos 4 brimestres de sua faculdade.peça também seu peso no começo do ano
+e o peso ao final do ano.
+
+1 - exiba o nome da pessoa e suas informações. Além disso deve conter os seguintes botoes para calcular as operações a baixo:
+	como: mostrar media; Calcular IMC.
+
+2 - para mostrar media exiba as notas da faculdade junto com a sua media calculada.
+
+3 - Faça tambem para calcular IMC um comparativo do calculo ICM do começo do ano e do final da pessoa. informando se seu IMC
+está ok para o seu peso. 
+	(lembrando que o calculo do IMC é peso / altura x altura)
+
+Desafio
+
+insira um butão Informar condição de luta.
+
+1 - suponha que essa pessoa está indo para uma luta comtra um Sayajin e não poderá lutar a não ser que 
+seu IMC estéja ok. Exiba um alerta informando se ele está liberado para lutar ao cliclar no botão Informar condição de luta. 

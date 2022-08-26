@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<body>
+    
+    <h2>Bora reprovar Neguinho</h2>
+
+    <h4>Informe as notas dos alunos</h4>
+        <input placeholder="nota1" id="in_nota1">
+            <br><br>
+        <input placeholder="nota2" id="in_nota2">
+
+    <br><br>
+
+    <button onclick="calcular()">Calcular Media</button>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var nota1 = Number(in_nota1.value);
+        var nota2 = Number(in_nota2.value);
+
+        var media = (nota1 + nota2) / 2;
+
+        if (media < 6){
+            alert('Tente outra vez...');
+        }
+        if (media >= 6){
+            alert('Parabéns, aprovado!');
+        }
+    }
+
+</script>

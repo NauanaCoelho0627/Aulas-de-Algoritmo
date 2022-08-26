@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 09</title>
+</head>
+<body>
+    
+    <h2>Hoje tem Netflix</h2>
+
+    <h4>Informe sua serie Preferida</h4>
+        <input placeholder="Sua serie preferida" id="in_serie">
+
+    <h4>Quantos episodios você já assistiu</h4>
+        <input placeholder="episodios" id="in_ep">
+
+    <br><br>
+
+    <button onclick="verificar()">Verificar Nivel</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var serie = in_serie.value;
+        var ep = Number(in_ep.value);
+
+        var maratonar = (ep * 22) / 60;
+
+        div_resultado.innerHTML = `Vejo que você gosta da série ${serie}`;
+
+        if(maratonar > 30){
+            div_resultado.innerHTML += `<br><br>Uau, você realmente gosta dessa série!`;
+        }
+    }
+
+</script>
+

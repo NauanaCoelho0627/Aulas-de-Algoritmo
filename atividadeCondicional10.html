@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+    
+    <h2>Banco Verificado</h2>
+
+    <h4>Informe seu saldo</h4>
+        <input placeholder="Valor em conta" id="in_valor">
+
+        <br><br>
+
+    <button onclick="verificar()">Verificar Financias</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var saldo = Number(in_valor.value);
+
+        if(saldo == 0){
+            div_resultado.innerHTML = 'Conta zerada';
+        }
+        if(saldo < 0){
+            div_resultado.innerHTML = 'Está devendo!';
+        }
+        if(saldo > 0){
+            div_resultado.innerHTML = 'Saldo positivo! :)';
+        }
+    }
+
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 05</title>
+</head>
+<body>
+    <h2>Pizzaria Sorria!</h2>
+    <h3>A sua Felicidade e a nossa Alegria!</h3>
+
+    <input placeholder="Informe o sabor desejado" id="in_sabor"><br><br>
+
+    <input placeholder="Precinho camarada" id="in_preco"><br><br>
+
+    <input placeholder="Vai rachar?!" id="in_amigos"><br><br>
+
+    <button onclick="calcular()">Pedir Pizza!</button><br><br><br>
+
+    <div id="valor_final"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        valor_final.innerHTML = `A sua pizza de ${in_sabor.value} custa ${in_preco.value} <br><br> O valor por amigo é ${Number(in_preco.value) / Number(in_amigos.value)}`
+    }
+
+</script>

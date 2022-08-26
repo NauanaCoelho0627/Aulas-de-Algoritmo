@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+    
+    <h2>Familia Grande</h2>
+
+    <h4>informe a quantidades de filho</h4>
+        <input placeholder="Filhos" id="in_qtd">
+
+        <br><br>
+
+    <button onclick="analisar()">Analisar Familia!</button>
+
+    <div id="div_familia"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var filhos = Number(in_qtd.value);
+
+        if (filhos >= 1){
+            div_familia.innerHTML = '<br>Não tem TV';
+        }
+        if (filhos >= 2){
+            div_familia.innerHTML += '<br>Não tem Internet';
+        }
+        if (filhos >= 3){
+            div_familia.innerHTML += '<br>Não tem Video Game';
+        }
+        if (filhos >= 4){
+            div_familia.innerHTML += '<br>Não tem Netflix';
+        }
+    }
+
+</script>

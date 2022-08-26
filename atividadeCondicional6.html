@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 06</title>
+</head>
+<body>
+    
+    <h2>Renda familiar</h2>
+
+    <h4>informe sua renda familiar</h4>
+        <input placeholder="informe sua renda" id="in_renda">
+
+    <h4>Informe o valor da prestação</h4>
+        <input placeholder="prestacao" id="in_prestacao">
+
+        <br><br>
+
+    <button onclick="calcular()">Verificar financiamento</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var renda = Number(in_renda.value);
+        var prestacao = Number(in_prestacao.value);
+
+        var financiamento = (prestacao / renda) * 100;
+
+        div_resultado.innerHTML = `a prestação corresponde a ${financiamento}% da renda familiar`;
+
+        if (financiamento > 30){
+            div_resultado.innerHTML += `<p style="color: red;"><strong>Será necessário complementar a renda familiar</strong></p>`;
+        }
+    }
+
+</script>

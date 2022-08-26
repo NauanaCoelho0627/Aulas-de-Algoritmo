@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    
+    <h3>Informe 2 valores</h3>
+
+    <input placeholder="Valor 1" id="in_valor1">
+        <br><br>
+    <input placeholder="Valor 2" id="in_valor2">
+        <br><br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="sub()">Subtrair</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="mul()">Muliplicar</button>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function somar(){
+        div_resultado.innerHTML = `<br> A soma entre ${in_valor1.value} e ${in_valor2.value} é ${Number(in_valor1.value) + Number(in_valor2.value)}`
+    }
+
+    function sub(){
+        div_resultado.innerHTML = `<br> A deferença entre ${in_valor1.value} e ${in_valor2.value} é ${Number(in_valor1.value) - Number(in_valor2.value)}`
+    }
+
+    function mul(){
+        div_resultado.innerHTML = `<br> O produto entre ${in_valor1.value} e ${in_valor2.value} é ${Number(in_valor1.value) * Number(in_valor2.value)}`
+    }
+
+    function dividir(){
+        div_resultado.innerHTML = `<br> A Razão entre ${in_valor1.value} e ${in_valor2.value} é ${Number(in_valor1.value) / Number(in_valor2.value)}`
+    }
+
+</script>

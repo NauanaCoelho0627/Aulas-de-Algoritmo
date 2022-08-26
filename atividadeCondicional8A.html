@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 08 A</title>
+</head>
+<body>
+    
+    <h2>Controle de Elevador</h2>
+
+    <h4>Quantidade de Mulher</h4>
+        <input placeholder="Mulheres" id="in_mulher">
+
+    <h4>Quantidade de Homens</h4>
+        <input placeholder="Homens" id="in_homem">
+
+    <br><br>
+
+    <button onclick="analisar()">Analisar Peso</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var homem = Number(in_homem.value);
+        var mulher = Number(in_mulher.value);
+
+        var peso1 = homem * 80;
+        var peso2 = mulher * 60;
+
+        var pesoTotal = peso1 + peso2;
+
+        div_resultado.innerHTML = `<br>Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoTotal}kg`;
+
+        if (pesoTotal > 800 && pesoTotal < 1000){
+            div_resultado.innerHTML += `<p style="color: blue">Será necessário descer alguém para que o elevador se movimente</p>`;
+        }
+        if (pesoTotal > 1000){
+            div_resultado.innerHTML += `<p style="color: red">Será necessário descer alguém para que o elevador se movimente</p>`;
+        }
+    }
+
+</script>

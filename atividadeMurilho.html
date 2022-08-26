@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Maluco</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 50%;
+        width: 50%;
+        margin-left: 30%;
+    }
+    .calMaluco{
+        margin-left: 10%;
+    }
+</style>
+<body>
+    
+    <div class="calMaluco">
+
+    <h2>Calculo Maluco</h2>
+
+    <h4>Informe os seus valores a baixo</h4>
+
+    <input placeholder="Valor 1" id="in_valor1">
+    <input placeholder="Valor 2" id="in_valor2">
+    <input placeholder="Valor 3" id="in_valor3">
+    <input placeholder="Valor 4" id="in_valor4">
+
+    <br><br>
+
+    <button onclick="calculo1()">Calculo Maluco 1</button>
+
+    <br><br>
+
+    <div id="div_resultado1">
+        O calculo maluco foi: X
+    </div>
+
+    <br><br>
+
+    <button onclick="calculo2()">Calculo Maluco 2</button>
+
+    <br><br>
+
+    <input placeholder="Calculo Maluco 2" id="in_valor5">
+
+    </div>
+
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg--yYJe5ai8sfAVWWRCBrOabAXorpZSJLBJKy2LH5ZIo_abuvT-UfQNq_y3S7m7q0hOsA7CdkIaXFCmLIRfzKrMYArU8oVrNPFvSig7HvmzW7peDs6hzyQHSKFkTMUHRy0qA5Ep9A1KME9Tx4znYufcSRPxPwOZe-MVecQyMx8ai6lfb7WqkER_54i/w1200-h630-p-k-no-nu/Spy%20x%20Family%20anime%20meme%20Anya%20Forger%20HEH%20face.webp" alt="">
+
+</body>
+</html>
+
+<script>
+
+    function calculo1() {
+        var nota1 = Number(in_valor1.value);
+        var nota2 = Number(in_valor2.value);
+        var nota3 = Number(in_valor3.value);
+        var nota4 = Number(in_valor4.value);
+
+        var media = ((nota1 + nota2) / nota3) ** nota4;
+
+        div_resultado1.innerHTML = `O calculo maluco foi: ${media}`;
+    }
+
+    function calculo2(){
+        var nota1 = Number(in_valor1.value);
+        var nota2 = Number(in_valor2.value);
+        var nota3 = Number(in_valor3.value);
+        var nota4 = Number(in_valor4.value);
+
+        var calc = ((nota1 * nota2)) ** 1 / nota4 ;
+
+        in_valor5.value = `O calculo maluco foi ${calc}`;
+    }
+
+</script>

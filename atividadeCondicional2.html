@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02</title>
+</head>
+<body>
+    
+    <h2>Refrigerante</h2>
+
+    <h4>Informe a quantidade de refrigerantes você bebe por dia!</h4>
+        <input placeholder="refrigerante" id="in_refri">
+
+    <button onclick="refri()">Quantos refri?</button>
+
+        <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function refri(){
+        var qtd = Number(in_refri.value);
+
+        var quant = qtd * 365;
+
+        div_resultado.innerHTML += `<br><br>Você consome ${quant} de latinhas por ano!`;
+
+        if(quant > 500 ){
+            div_resultado.innerHTML += '<br>Cuidado!';
+        }
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 09</title>
+</head>
+<body>
+    
+    <h3>Economia</h3>
+
+    <h4>Informe o valor da passagem na sua região!</h4>
+        <input id="in_valor">
+
+    <h4>Informe quantas viagens você fará por mês</h4>
+        <input id="in_passagem">
+        
+        <br><br>
+
+    <button onclick="calcular()">Ver economia</button>
+
+</body>
+</html>
+
+    <script>
+
+        function calcular(){
+            alert(`Você economixará R$: ${Number(in_valor.value / 2) * Number(in_passagem.value)} reais`)
+        }
+
+    </script>

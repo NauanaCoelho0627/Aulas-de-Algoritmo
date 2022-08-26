@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 14</title>
+</head>
+<body>
+    
+    <h3>Ingressos!</h3>
+
+    
+    <h4>Quantos ingressos estudantes foram vendidos?</h4>
+        <input placeholder="Ingresso estudante" id="in_estu">
+
+    <h4>Quantos ingressos comum foram vendidos?</h4>
+        <input placeholder="Ingresso estudante" id="in_comum">
+
+    <h4>Informe o valor de cada ingresso comum</h4>
+        <input placeholder="Ingresso estudante" id="in_valor">
+    
+        <button onclick="calcular()">Calcular Lucro</button>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        alert (`A arrecadação foi de R$: ${(Number(in_estu.value) * Number(in_valor.value) / 2) + (Number(in_comum.value) * Number(in_valor.value))}`)
+    }
+
+</script>
+

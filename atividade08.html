@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 08</title>
+</head>
+<body>
+
+    <h2>Aposentadoria!!</h2>
+
+    <h4>Informe sua idade</h4>
+    <input id="in_idade"><br><br>
+    
+    <button onclick="aposen()">Aposentadoria</button> <br><br>
+
+    <div id="div_apon">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function aposen(){
+        div_apon.innerHTML = `Seu tempo até a aposentadoria caso seja homem e de: ${70 - Number(in_idade.value)} anos <br><br> Seu tempo até a aponsetadoria caso seja mulher e de: ${60 - Number(in_idade.value)}`
+    }
+
+</script>

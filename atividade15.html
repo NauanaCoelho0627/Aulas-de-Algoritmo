@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+</head>
+<body>
+    
+    <h3>IMC</h3>
+
+    <h4>Informe seu peso</h4>
+        <input id="in_peso">
+
+    <h4>Informe sua altura</h4>
+        <input id="in_altura">
+
+        <br><br>
+
+    <button onclick="calcularM()">Calcular IMC Mulher</button>
+    <button onclick="calcularH()">Calcular IMC Homem</button>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calcularM() {
+
+        div_resultado.innerHTML = `<br> Seu imc e : ${(Number(in_peso.value) / (Number(in_altura.value) * Number(in_altura.value))) * 0.9}`
+    }
+    
+    function calcularH() {
+
+        div_resultado.innerHTML = `<br> Seu imc e : ${Number(in_peso.value) / (Number(in_altura.value) * Number(in_altura.value))}`
+    }
+
+</script>

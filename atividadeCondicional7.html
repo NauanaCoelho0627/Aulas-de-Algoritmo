@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 07</title>
+</head>
+<body>
+
+    <h2>Banco Itado</h2>
+
+    <h3>Informe o saldo em conta</h3>
+        <input placeholder="Saldo" id="in_saldo">
+
+    <h3>Informe o valor de deseja sacar</h3>
+        <input placeholder="Valor a sacar" id="in_debito">
+
+        <br><br>
+
+    <button onclick="operacao()">Analisar Conta!</button>
+
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    /*function operacao(){
+        var saldo = Number(in_saldo.value);
+        var debito = Number(in_debito.value);
+
+        var NovoSaldo = (saldo - debito);
+
+        if(NovoSaldo < 100){
+            div_resultado.innerHTML = `<p style="color red">O saldo atual da conta corrente é ${NovoSaldo}</p>` 
+        }
+
+        div_resultado.innerHTML = `O saldo atual da conta corrente é ${NovoSaldo}`
+    }*/
+
+    function operacao(){
+        var saldo = Number(in_saldo.value);
+        var debito = Number(in_debito.value);
+
+        var NSaldo = (saldo - debito);
+
+        div_resultado.innerHTML = `O saldo atual da conta corrente é ${NSaldo}`
+
+        if(NSaldo <= 0){
+            div_resultado.innerHTML = `<p><strong style="color: red">O saldo atual da conta corrente é ${NSaldo}</strong></p>`;
+        }
+    }
+
+</script>

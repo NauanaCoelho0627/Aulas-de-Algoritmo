@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    
+    <h2>Elevador Maluco</h2>
+
+    <h4>Informe o peso do Elevador maluco</h4>
+        <input id="in_peso">
+
+    <br><br>
+
+    <button onclick="ligar()">Ligar Elevador Maluco!</button>
+
+</body>
+</html>
+
+<script>
+
+    function ligar(){
+        var peso = Number(in_peso.value);
+
+        if (peso < 500){
+            alert('Elevador Maluco irá se mover!');
+        }
+        if (peso > 500){
+            alert('Alguém precisa descer do Elevador Maluco!');
+        }
+    }
+
+</script>

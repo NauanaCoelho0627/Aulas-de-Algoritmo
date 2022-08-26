@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variavel 01</title>
+</head>
+<body>
+    
+    <h3>Ingressos!</h3>
+
+    
+    <h4>Quantos ingressos estudantes foram vendidos?</h4>
+        <input placeholder="Ingresso estudante" id="in_estu">
+
+    <h4>Quantos ingressos comum foram vendidos?</h4>
+        <input placeholder="Ingresso estudante" id="in_comum">
+
+    <h4>Informe o valor de cada ingresso comum</h4>
+        <input placeholder="Ingresso estudante" id="in_valor">
+    
+        <button onclick="calcular()">Calcular Lucro</button>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var estudante = Number(in_estu.value);
+        var comum = Number(in_comum.value);
+        var valor = Number(in_valor.value);
+
+        var lucro = ((estudante * valor) / 2) + (comum * valor);
+
+        alert(`O seu lucro foi de R$ ${lucro}`);
+    }
+
+</script>

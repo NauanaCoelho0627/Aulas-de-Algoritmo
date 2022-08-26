@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+
+    <h3>Dragon Ball Ki</h3>
+
+    <h4>Informe seu nome Guerreiro</h4>
+        <input id="in_nome">
+
+    <h4>Informe seu Ki Guerreiro</h4>
+        <input id="in_ki">
+
+        <br><br>
+
+    <button onclick="calcular()">Ver Ki em cada forma</button>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        alert(`Guerreiro ${in_nome.value} seu Ki na forma de Super Sayajin e de: ${Number(in_ki.value) * 50}`)
+
+        alert(`Guerreiro ${in_nome.value} seu Ki na forma de Super Sayajin 2 e de: ${Number(in_ki.value) * 100}`)
+    }
+
+</script>
