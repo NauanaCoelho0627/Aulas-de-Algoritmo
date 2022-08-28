@@ -1,0 +1,53 @@
+<!--4. Crie um programa o qual:
+
+a) Solicita a frequência do aluno
+
+b) Ao clicar em "Analisar frequência", deve aparecer, abaixo dele:
+
+    A imagem de um turista, caso a frequência for menor que 50 OU
+    A imagem de um aluno estudioso, caso a frequência for a partir de 50-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 17</title>
+</head>
+<style>
+    body{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+    
+    <h2>Escolinha do professor Raugil</h2>
+
+    <h4>Informe a frequencia do aluno</h4>
+        <input placeholder="Frequencia" id="in_frequencia">
+
+    <button onclick="analisar()">Analisar Fequencia</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var freq = Number(in_frequencia.value);
+
+        if(freq < 50){
+            div_resultado.innerHTML = '<img style="height="50%"; widht="50%"" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIrRF16yK7yHfDvcqzyGAi3E_lKgJMnpNnoQ&usqp=CAU">'
+        }else{
+            div_resultado.innerHTML = '<img src="https://pm1.narvii.com/6678/9babca8d9766166d234f866cc5844d1b1b47ca5e_hq.jpg">'
+        }
+
+    }
+
+</script>

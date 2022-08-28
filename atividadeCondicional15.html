@@ -1,0 +1,47 @@
+<!--2. Criar um programa que auxilie o Banco Itado a identificar quem entrou no cheque especial.
+a) Solicite o saldo da conta
+b) Solicite o valor do débito (ou seja, valor a tirar da conta)
+c) Ao clicar em "Analisar conta", calcule o novo saldo da conta e exiba a mensagem "o saldo atual da conta corrente é xx.xx". Esta frase deverá estar em negrito e em vermelho somente se o saldo for menor que zero ou em itálico e azul caso o saldo for 0 ou mais.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 15</title>
+</head>
+<body>
+    <h2>Banco Itado</h2>
+
+    <h4>Informe seu saldo</h4>
+        <input placeholder="Saldo" id="in_saldo">
+
+    <h4>Informe o valor que deseja sacar</h4>
+        <input placeholder="Saque" id="in_saque">
+
+    <button onclick="analisar()">Analisar conta!</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var saldo = Number(in_saldo.value);
+        var debito = Number(in_saque.value);
+
+        var Nsaldo = saldo - debito;
+
+        if(Nsaldo > 0){
+            div_resultado.innerHTML = `<strong style="color: blue"> o saldo atual da conta corrente é ${Nsaldo}</strong>`;
+        }else{
+            div_resultado.innerHTML = `<strong style="color: red"> o saldo atual da conta corrente é ${Nsaldo}</strong>`;
+        }
+    }
+
+</script>
