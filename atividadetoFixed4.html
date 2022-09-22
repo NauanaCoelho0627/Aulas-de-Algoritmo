@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade toFixed 4</title>
+</head>
+<body>
+    
+    <h3>Informe sua altura</h3>
+        <input placeholder="altura" id="in_altura">
+
+    <h3>Informe o seu peso</h3>
+        <input placeholder="peso" id="in_peso">
+
+        <br><br>
+
+    <button onclick="mulher()">Calcular IMC mulher</button>
+    <button onclick="homem()">Calcular IMC homem</button>
+
+        <br><br>
+    
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function mulher(){
+        var altura = Number(in_altura.value);
+        var peso = Number(in_peso.value);
+
+        var calculo = (peso / (altura * altura)) * 0.90;
+
+        div_resultado.innerHTML = `Considerando que você e uma mulher o seu IMC é ${calculo.toFixed(2)}`;
+
+    }
+
+    function homem(){
+        var altura = Number(in_altura.value);
+        var peso = Number(in_peso.value);
+
+        var calculo = peso / (altura * altura);
+
+        div_resultado.innerHTML = `Considerando que você e um homem o seu IMC é ${calculo.toFixed(2)}`;
+
+    }
+
+</script>

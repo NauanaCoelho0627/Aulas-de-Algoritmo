@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade toFixed2</title>
+</head>
+<body>
+
+    <h2>Informe a primeira nota</h2>
+        <input placeholder="nota1" id="in_nota1">
+
+    <h2>Informe a segunda nota</h2>
+        <input placeholder="nota2" id="in_nota2"> 
+
+        <br><br>
+    
+    <button onclick="media()">Calcular media</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function media(){
+        var nota1 = Number(in_nota1.value);
+        var nota2 = Number(in_nota2.value);
+
+        var media = (nota1 + nota2) / 2;
+
+        div_resultado.innerHTML = `Sua média foi de ${media.toFixed(2)}`;
+    }
+
+</script>

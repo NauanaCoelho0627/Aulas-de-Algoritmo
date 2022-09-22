@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade if & else 3</title>
+</head>
+<body>
+
+    <h2>Sorveteria 4Migas</h2>
+
+    <h3>Informe o valor por grama do sorvete</h3>
+        <input id="in_valorGrama">
+
+    <h3>Informe o peso do sorvete (em gramas)</h3>
+        <input id="in_peso">
+
+    <button onclick="calcular()">Calcular</button>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var grama = Number(in_valorGrama.value);
+        var peso = Number(in_peso.value);
+
+        var calculo = grama * peso;
+
+        if(calculo > 10){
+            alert('Esse sorvete vai comprometer a mesada')
+        }else{
+            alert('Hoje você está maneirando..')
+        }
+    }
+
+</script>

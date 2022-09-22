@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 7</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+
+    <h3>Escolha seu time</h3>
+        <select id="sel_times">
+            <option value=""></option>
+            <option value="https://piauihoje.com/migration/public_html/media/image_bank/2016/8/escudo-do-sao-paulo-ficou-em-1o-lugar-na-lista-do-daily-mail.jpg">São Paulo</option>
+            <option value="https://img.elo7.com.br/product/main/2BF496C/matriz-de-bordado-escudo-time-de-futebol-palmeira-maquina-de-bordar.jpg">Palmeiras</option>
+            <option value="https://logodownload.org/wp-content/uploads/2016/11/corinthians-logo-0-1536x1536.png">Corinthians</option>
+            <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/501px-Santos_logo.svg.png">Santos</option>
+        </select>
+    
+        <br><br>
+
+            <button onclick="times()">Ver escudo</button>
+
+        <br><br><br><br>z
+        <img src="" id="img_times" style="height: 350px;">
+</body>
+</html>
+    
+    <script>
+    
+        function times(){
+                img_times.src = sel_times.value
+            
+        }
+    
+    </script>

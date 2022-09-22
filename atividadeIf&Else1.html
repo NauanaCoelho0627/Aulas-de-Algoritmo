@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="p-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade if & else</title>
+</head>
+
+<body>
+
+    <h1>Wen Rac</h1>
+
+    <h2>Informe seu nome</h2>
+    <input placeholder="nome" id="in_nome">
+
+    <h2>Informe o modelo do carro de deseja comprar</h2>
+    <input placeholder="modelo do carro" id="in_modelo">
+
+    <h2>Informe o valor do carro</h2>
+    <input placeholder="valor do carro" id="in_valor">
+
+    <h2>Informe um cupom de desconto</h2>
+    <input placeholder="cupom de desconto" id="in_cupom">
+
+    <br><br>
+
+    <button onclick="financiar()">Efetuar compra</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function financiar() {
+        var nome = in_nome.value;
+        var modelo = in_modelo.value;
+        var valor = Number(in_valor.value);
+        var cupom = in_cupom.value;
+
+        var desconto = valor * 0.11;
+
+        if (modelo == "") {
+            alert('Informe o modelo do carro para proseguir com a compra!');
+        }
+        else {
+            if (valor < 5000) {
+                alert('Valor inválido! O carro está barato demais');
+            }
+            else {
+                if (cupom == "carro_novo") {
+                    div_resultado.innerHTML = `<p style=" color: green"><i>Olá, ${nome}! O carro de modelo ${modelo}, 
+                de valor padrão R$${valor}, sairá por R$${desconto}</i></p>`
+                } else {
+                    div_resultado.innerHTML = `<p style=" color: red"><strong>Olá, ${nome}! O carro de modelo ${modelo}, 
+            de valor padrão R$${valor}, sairá por R$${valor}</strong></p>`
+                }
+            }
+        }
+    }
+
+
+</script>

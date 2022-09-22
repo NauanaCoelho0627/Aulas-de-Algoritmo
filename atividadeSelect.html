@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 20%;
+        width: 20%;
+    }
+    button{
+        background-color: aqua;
+        color: black;
+    }
+</style>
+<body>
+    
+    <h2>One Punch Man</h2>
+
+    <img src="https://images.wallpapersden.com/image/download/one-punch-man-4k-poster_bWdlaGiUmZqaraWkpJRobWllrWdoZWk.jpg" alt="">
+
+    <h3>Escola um herói</h3>
+        <select id="sel_heroi">
+            <option value="">- Escolha um -</option>
+            <option value="S">Metal Night</option>
+            <option value="A">Máscara Doce</option>
+            <option value="S">Prisioneiro Puri Puri</option>
+            <option value="B">Fubuki</option>
+            <option value="C">Cavaleiro sem licença</option>
+        </select>
+
+        <button onclick="heroi()">Escolher heroi</button>
+
+            <br><br>
+
+        <div id="escolhido"></div>
+</body>
+</html>
+<script>
+    function heroi(){
+        var classe = sel_heroi.value;
+
+            escolhido.innerHTML = `Esse(a) herói(na) é da classe ${classe}`;
+        
+    }
+</script>

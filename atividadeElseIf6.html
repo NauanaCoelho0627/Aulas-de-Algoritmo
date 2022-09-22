@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 6</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    p{
+        height: 30px;
+        width: 200px;
+        padding: 20px;
+    }
+    .estilo{
+        margin-left: 41%;
+    }
+</style>
+<body>
+
+    <h2>Escolha um time da grande capital</h2>
+        <select id="sel_time">
+            <option value=""></option>
+            <option value="sp">São Paulo</option>
+            <option value="pl">Palmeiras</option>
+            <option value="ct">Corinthians</option>
+            <option value="st">Santos</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="falar()">Falar sobre esse time</button>
+
+        <br>
+
+        <div id="div_resultado" class="estilo"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function falar(){
+        var time = sel_time.value
+
+        if(time == 'sp'){
+            div_resultado.innerHTML = `<br><p style="color:red ; background-color:black">Salve o Tricolor paulista<p>`
+        }else if(time == 'pl'){
+            div_resultado.innerHTML = `<br><p style="colore:white ; background-color:green">Salve o alviverde imponente<p>`
+        }else if(time == 'ct'){
+            div_resultado.innerHTML = `<br><p style="color:white ; background-color:black">Salve o Corinthiansp`
+        }else if(time == 'st'){
+            div_resultado.innerHTML = `<br>Agora que dá a bola é o Santos`
+        }else{ 
+            div_resultado.innerHTML = " "
+        }
+    }
+
+</script>

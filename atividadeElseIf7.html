@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 7</title>
+</head>
+<body>
+
+    <h2>Informe o valor que tem economizado</h2>
+        <input placeholder="Economias" id="in_valor">
+
+        <br><br>
+
+        <button onclick="compra()">Poder de Compra</button>
+
+            <br><br>
+
+        <div id="comprinhas"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function compra(){
+        var comprar = Number(in_valor.value);
+
+        if(comprar <= 0){
+            comprinhas.innerHTML = "Nada de Compras"
+        }else if (comprar <= 100){
+            comprinhas.innerHTML = "Viagem de ida e volta pra Praia Grande"
+        }else if(comprar < 4000){
+            comprinhas.innerHTML += "<br> Uma boa moto usada"
+        }else{
+            comprinhas.innerHTML += "<br> Mais alguma bobagem legal"
+        }
+    }
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade toFixed 5</title>
+</head>
+<body>
+    
+    <h3>Informe seu salario bruto</h3>
+        <input placeholder="salario bruto" id="in_salario">
+
+        <br><br>
+
+    <button onclick="calcular()">Calcular impostos</button>
+
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var bruto = Number(in_salario.value);
+
+        var INSS = bruto * 0.10;
+        var IR = bruto * 0.20;
+        var impostoSindical = bruto * (1 / 30);
+
+        var imposto = impostoSindical + IR + INSS;
+
+        alert(`Apesar de seu bruto ser R$${bruto.toFixed(2)}, após os descontos, você receberá somente R$${imposto.toFixed(2)}`);
+
+    }
+
+</script>

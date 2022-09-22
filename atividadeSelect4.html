@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 4</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+    
+    <h2>Escolha uma frase da oração de São Francisco de Assis</h2>
+        <select id="sel_oracao">
+            <option>escolha uma frase</option>
+            <option value="que eu leve o Amor">Onde houve Ódio</option>
+            <option value="que eu leve o Perdão">Onde houve Ofensa</option>
+            <option value="que eu leve a União">Onde houve Discórdia</option>
+            <option value="que eu leve a Fé">Onde houve Dúvida</option>
+        </select>
+
+            <br><br>
+
+        <button onclick="oracao()">Ver oração</button>
+
+</body>
+</html>
+
+<script>
+
+    function oracao(){
+        var orar = sel_oracao.value;
+
+        alert(`${orar}`);
+    }
+
+</script>

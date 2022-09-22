@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade toFixed</title>
+</head>
+<body>
+
+    <h4>Informe o sabor da pizza</h4>
+        <input placeholder="sabor da pizza" id="in_sabor">
+
+    <h4>Informe o valor da pizza</h4>
+        <input placeholder="valor da pizza" id="in_valor">
+
+    <h4>Informe a quatidade de amigos para rachar a conta</h4>
+        <input placeholder="amigos" id="in_amigos">
+
+        <br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var pizza = in_sabor.value;
+        var qtdAmigos = Number(in_amigos.value);
+        var valor = Number(in_valor.value);
+
+        var preco = valor / qtdAmigos;
+
+        div_resultado.innerHTML = `Pedir Pizza", exiba abaixo do botão um texto como este: "A pizza de ${pizza} custa R$${valor.toFixed(2)} e cada amigo vai pagar R$${preco.toFixed(2)}`;
+    }
+
+</script>

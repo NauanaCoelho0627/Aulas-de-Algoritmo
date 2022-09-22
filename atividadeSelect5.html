@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 5</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+    <h2>Tabuada do seu Zé</h2>
+
+    <h3>escolha sua tabuada</h3>
+        <select id="sel_tabu" onchange="tabuada()">
+            <option value="">tabuada</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+
+        <br><br>
+
+        <div id="div_tabuada"></div>
+
+</body>
+</html>
+
+<script>
+
+    function tabuada(){
+        var tabu = Number(sel_tabu.value)
+
+        if(tabu != ""){
+            div_tabuada.innerHTML =`${tabu} X 1 = ${tabu * 1} <br>
+             ${tabu} X 2 = ${tabu * 2} <br>
+             ${tabu} X 3 = ${tabu * 3} <br>
+             ${tabu} X 4 = ${tabu * 4} <br>
+             ${tabu} X 5 = ${tabu * 5} <br>
+             ${tabu} X 6 = ${tabu * 6} <br>
+             ${tabu} X 7 = ${tabu * 7} <br>
+             ${tabu} X 8 = ${tabu * 8} <br>
+             ${tabu} X 9 = ${tabu * 9}`
+        }
+    }
+
+</script>

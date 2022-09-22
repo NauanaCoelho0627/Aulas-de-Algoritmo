@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade toFixed 3</title>
+</head>
+<body>
+
+    <h2>Informe um valor</h2>
+        <input placeholder="valor 1" id="in_valor1">
+
+    <h2>Informe um segundo valor</h2>
+        <input placeholder="valor 2" id="in_valor2">
+
+        <br><br>
+
+        <button onclick="soma()">Soma</button>
+        <button onclick="subtrair()">Diferença</button>
+        <button onclick="dividir()">Produto</button>
+        <button onclick="multiplicar()">Razão</button>
+
+        <br><br>
+
+        <div id="div_resultado"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+    function soma(){
+        var valor1 = Number(in_valor1.value);
+        var valor2 = Number(in_valor2.value);
+
+        var soma = valor1 + valor2;
+
+        div_resultado.innerHTML = `A soma entre ${valor1.toFixed(2)} e ${valor2.toFixed(2)} é ${soma.toFixed(2)}`;
+    }
+
+    function subtrair(){
+        var valor1 = Number(in_valor1.value);
+        var valor2 = Number(in_valor2.value);
+
+        var subtrair = valor1 - valor2;
+
+        div_resultado.innerHTML = `A diferença entre ${valor1.toFixed(2)} e ${valor2.toFixed(2)} é ${subtrair.toFixed(2)}`;
+    }
+
+    function dividir(){
+        var valor1 = Number(in_valor1.value);
+        var valor2 = Number(in_valor2.value);
+
+        var dividir = valor1 / valor2;
+
+        div_resultado.innerHTML = `O produto entre ${valor1.toFixed(2)} e ${valor2.toFixed(2)} é ${dividir.toFixed(2)}`;
+    }
+
+    function multiplicar(){
+        var valor1 = Number(in_valor1.value);
+        var valor2 = Number(in_valor2.value);
+
+        var multi = valor1 * valor2;
+
+        div_resultado.innerHTML = `A razão entre ${valor1.toFixed(2)} e ${valor2.toFixed(2)} é ${multi.toFixed(2)}`;
+    }
+
+</script>

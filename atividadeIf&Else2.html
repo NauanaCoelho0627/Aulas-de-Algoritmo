@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade if & else2</title>
+</head>
+<body>
+    <h2>Pencionaria</h2>
+
+        <h3>Informe o valor de seu carro vista</h3>
+            <input id="input_valorC">
+
+        <h3>Informe a taxa de juros ao mês</h3>
+            <input id="input_taxa">
+
+        <h3>Informe a quantidade de parcelas</h3>
+            <input id="input_parcelas">
+
+        <br><br>
+
+        <button onclick="calcularFinanciamento()">Calcular Financiamento</button>
+
+        <br><br>
+
+        <div id="div_resultador"></div>
+</body>
+</html>
+
+<script>
+function calcularFinanciamento(){
+        var valorVista = Number(in_valorC.value);
+        var taxa = Number(in_taxa.value);
+        var parcelas = Number(in_parcelas.value);
+
+        var q = 1 + (taxa * 0.01);
+        var a1 = valorVista / parcelas;
+        var n = parcelas;
+
+
+        var sn = (a1 * ((q**n) - 1))/ (q - 1);
+
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${sn.toFixed(2)}. Após 1 mês, ele já vai valer só R$${valorVista * 0.8}. Porque comprou financiado, vai pagar o correspondente a ${(sn/valorVista).toFixed(1)} carros`;
+}
+</script>

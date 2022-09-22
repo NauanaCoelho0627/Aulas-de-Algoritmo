@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 3</title>
+</head>
+<body>
+
+    <h3>Quitada do seu Yoshi</h3>
+
+    <h2>Escolha seu produto</h2>
+        <select id="sel_prod">
+            <option value="">...</option>
+            <option value="2">chocolate</option>
+            <option value="5">farinha de trigo</option>
+            <option value="19">sabão em pó 2k</option>
+            <option value="3">massa de bolo</option>
+        </select>
+
+        <button onclick="preco()">Ver preço</button>
+    
+</body>
+</html>
+
+<script>
+
+    function preco(){
+        var produto = Number(sel_prod.value);
+
+        alert(`Isso custa R$${Number(produto).toFixed(2)}`)
+    }
+
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 11</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+
+    <h2>Escolha uma estação do ano</h2>
+
+    <select id="sel_estacao" onchange="estacao()">
+        <option value=""></option>
+        <option value="outono">Outono</option>
+        <option value="primavera">Primavera</option>
+        <option value="verao">Verão</option>
+        <option value="inverno">Inverno</option>
+    </select>
+
+    <br><br>
+
+    <div id="div_estacao"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function estacao(){
+        var esta = sel_estacao.value;
+
+        if (esta == ""){
+            div_estacao.innerHTML = ` `
+        }else if(esta == 'outono'){
+            div_estacao.innerHTML = `<img src="https://dicasparaviagens.com.br/wp-content/uploads/2017/03/Outono-Principal.jpg" style="height: 200px;"> <br>
+            março, abril e maio.`
+        }else if(esta == 'primavera'){
+            div_estacao.innerHTML = `<img src="https://www.melhoresdestinos.com.br/wp-content/uploads/2021/03/primavera-destinos-norte-capa-01-1536x805.jpg" style="height: 200px;"> <br>
+            setembro, outubro e novembro.`
+        }else if(esta == 'verao'){
+            div_estacao.innerHTML = `<img src="https://catracalivre.com.br/wp-content/uploads/2020/10/unnamed-12.jpg" style="height: 200px;"> <br>
+            dezembro, janeiro e fevereiro`
+        }else{
+            div_estacao.innerHTML = `<img src="https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/inverno-datas-e-caracteristicas.jpg.webp" style="height: 200px;"> <br>
+            junho, julho e agosto.`
+        }
+
+    }
+
+</script>

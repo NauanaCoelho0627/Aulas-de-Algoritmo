@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 3</title>
+</head>
+<body>
+
+    <h2>Vamos medir a temperatura</h2>
+
+    <h3>informe a sua temperatura</h3>
+        <input placeholder="temperatura" id="in_temp" onkeyup="verificar()">
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var temp = Number(in_temp.value)
+
+        if(temp < 14){
+            div_resultado.innerHTML = 'Congelante'
+        }else if(temp <= 21){
+            div_resultado.innerHTML = 'Com Frio'
+        }else if(temp <= 24){
+            div_resultado.innerHTML = 'Confortável'
+        }else if(temp <= 31){
+            div_resultado.innerHTML = 'Com Calor'
+        }else{
+            div_resultado.innerHTML = 'Calor Escaldante'
+        }
+    }
+
+</script>

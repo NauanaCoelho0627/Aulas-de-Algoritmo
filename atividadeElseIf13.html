@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 13</title>
+</head>
+<body>
+
+    <div id="div_saldo">Valor guardado: R$0.00</div>
+        <br><br>
+
+    <button onclick="guardar()">Guardar 5 reais</button>
+    <button onclick="gastar()">Gastar 10 reais</button>
+
+        <br>
+
+    <div id="div_status"></div>
+
+</body>
+</html>
+
+<script>
+
+    var saldo = 0;
+
+    function guardar(){
+        saldo = saldo + 5;
+
+        div_saldo.innerHTML = `Valor guardado: R$${Number(saldo.toFixed(2))}`;
+
+        if(saldo < -20){
+            div_status.innerHTML += `<br>Seu nome vai ficar sujo, hein`
+        }else if(saldo < 0){
+            div_status.innerHTML = `<p style="color: red">Finanças em perigo</p>`
+        }else if(saldo > 100){
+            div_status.innerHTML += `<br>#ostentação`
+        }else{
+            div_status.innerHTML = `<p style="color: blue">Finanças OK</p>`
+        }  
+    }
+
+    function gastar(){
+        saldo = saldo - 10;
+
+        div_saldo.innerHTML = `Valor guardado: R$${Number(saldo.toFixed(2))}`;
+
+        if(saldo < -20){
+            div_status.innerHTML += `<br> Seu nome vai ficar sujo, hein`
+        }else if(saldo < 0){
+            div_status.innerHTML = `<p style="color: red">Finanças em perigo</p>`
+        }else if(saldo > 100){
+            div_status.innerHTML += `<br> #ostentação`
+        }else{
+            div_status.innerHTML = `<p style="color: blue">Finanças OK</p>`
+        }   
+
+    }
+
+</script>

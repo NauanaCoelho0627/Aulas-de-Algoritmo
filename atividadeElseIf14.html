@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 14</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+
+    <div id="div_vida">Vida do Lutador: 1000</div>
+        <br><br>
+
+        <div id="div_button">
+            <button onclick="apanhar()">Apanhar</button>
+            <button onclick="forca()">Concentrar Força</button>
+        </div>
+
+        <br><br>
+
+    <div id="div_status"></div>
+
+</body>
+</html>
+
+<script>
+
+    var vida = 1000;
+
+    function apanhar(){
+        vida = vida - 100;
+
+        div_vida.innerHTML = `Vida do Lutador: ${Number(vida.toFixed(1))}`;
+
+        if(vida <= 0){
+            div_status.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ7qGK-X7nfxGQGGJCajF93gCMoJc7ShUZw-v1U78oEwituJLVayTmvRNO3TBu4Pt4RRo&usqp=CAU" style="height: 200px;"><br>  Lutador já era`
+
+            div_button.innerHTML = `<button>Apanhar</button>
+            <button>Concentrar Força</button>`
+        }else{
+            div_status.innerHTML = `<img src="https://www.coxinhanerd.com.br/wp-content/uploads/2019/09/THUMB-29.jpg" style="height: 200px;">
+            <br> Lutador ainda Vivo`
+        }
+         
+    }
+
+    function forca(){
+        vida = vida + (vida * 0.05);
+
+        div_vida.innerHTML = `Vida do Lutador: ${Number(vida.toFixed(1))}`;
+
+        if(vida <= 0){
+            div_status.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ7qGK-X7nfxGQGGJCajF93gCMoJc7ShUZw-v1U78oEwituJLVayTmvRNO3TBu4Pt4RRo&usqp=CAU" style="height: 200px;">
+            <br>  Lutador já era`
+
+            div_button.innerHTML = `<button>Apanhar</button>
+            <button>Concentrar Força</button>`
+        }else{
+            div_status.innerHTML = `<img src="https://www.coxinhanerd.com.br/wp-content/uploads/2019/09/THUMB-29.jpg" style="height: 200px;">
+            <br> Lutador ainda Vivo`
+        }
+
+    }
+
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 2</title>
+</head>
+<body>
+    
+    <h2>Vamos aposentar?</h2>
+
+    <h3>Informe quantos anos você já trabalhou.</h3>
+        <input id="in_anos">
+
+    <h3>Selecione em que Intituição você trabalhou</h3>
+        <select id="sel_int">
+            <option value="40">Instituição Privada</option>
+            <option value="35">Instituição Publico</option>
+            <option value="45">Empreendedor</option>
+        </select>
+
+            <button onclick="calcular()">Calcular aposentadoria</button>
+
+                <br><br>
+
+            <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var anos = Number(in_anos.value);
+        var ano = Number(sel_int.value);
+
+        aposentadoria = ano - anos;
+
+        div_resultado.innerHTML = `Você ainda terá que trabalhar por mais ${aposentadoria} anos para se aposentar.`;
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 6</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+</style>
+<body>
+    <h3>Em  que estação do ano estamos</h3>
+        <select id="sel_estacao" onchange="esta()">
+            <option value="">escolha uma</option>
+            <option value="https://www.melhoresdestinos.com.br/wp-content/uploads/2021/03/primavera-destinos-norte-capa-01-1536x805.jpg">Primavera</option>
+            <option value="https://catracalivre.com.br/wp-content/uploads/2020/10/unnamed-12.jpg">Verão</option>
+            <option value="https://dicasparaviagens.com.br/wp-content/uploads/2017/03/Outono-Principal.jpg">Outono</option>
+            <option value="https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/inverno-datas-e-caracteristicas.jpg.webp">Inverno</option>
+        </select>
+
+        <br><br>
+
+        <img src="" id="img_estacoes" style="height: 200px;">
+</body>
+</html>
+
+<script>
+
+    function esta(){
+        img_estacoes.src = sel_estacao.value
+    }
+
+</script>
+

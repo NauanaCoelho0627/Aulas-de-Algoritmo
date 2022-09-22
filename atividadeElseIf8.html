@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 8</title>
+</head>
+<body>
+
+    <h3>informe quantos pães frances você come</h3>
+        <input placeholder="Pães Frances" id="in_pao">
+
+    <h3>informe quantos pacotes de bolacha você come</h3>
+        <input placeholder="Pacotes de bolacha" id="in_bolacha">
+
+    <h3>informe quantos copos de achocolatado você bebe</h3>
+        <input placeholder="Copos de achocolatado" id="in_chocolate">
+
+        <br><br>
+
+    <button onclick="verificar()">Verificar calorias</button>
+
+        <br><br>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function verificar(){
+        var pao = Number(in_pao.value) * 50;
+        var bolacha = Number(in_bolacha.value) * 80;
+        var chocolate = Number(in_chocolate.value) * 70;
+
+        var calorias = pao + bolacha + chocolate;
+
+        if(calorias < 200){
+            resultado.innerHTML = "Parabéns, vai sair em forma da quarentena"
+        }else if(calorias <= 400){
+            resultado.innerHTML = "Cuidado, vai ficar mais fofinho(a)"
+        }else{
+            resultado.innerHTML = "Bom, acho que muitos não vão te reconhecer após a quarentena" 
+        }
+    }
+
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Select 8</title>
+</head>
+<body>
+
+    <h2>Descontos no meu salario ;-;</h2>
+
+    <h4>Informe seu salario</h4>
+        <input placeholder="salario" id="in_salario">
+
+    <h4>escolha o imposto</h4>
+        <select id="sel_imposto">
+            <option value=""></option>
+            <option value="0.10">INSS</option>
+            <option value="0.20">IR</option>
+            <option value="0.05">VT</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="desconto()">Ver desconto</button>
+
+        <br><br>
+
+        <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function desconto(){
+        var salario = Number(in_salario.value);
+        var des = Number(sel_imposto.value);
+
+        var desconto = salario * des;
+
+        div_resultado.innerHTML = `Valor desse desconto: R$${desconto.toFixed(2)}`;
+
+    }
+
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Else If 9</title>
+</head>
+<body>
+
+    <h2>Informe sua meta de economia</h2>
+        <input placeholder="Meta de Economia" id="in_econo">
+
+    <h2>Informe o valor já guardado</h2>
+        <input placeholder="Valor guardado" id="in_money">
+
+        <br><br>
+        
+        <button onclick="analisar()">Analisar economia</button>
+
+        <br>
+
+        <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var meta = Number(in_econo.value);
+        var money = Number(in_money.value);
+
+        if(money < meta){
+            resultado.innerHTML = ` Força! Ainda em busca da meta! Falta ${meta - money}`;
+        }else if(money > meta){
+            resultado.innerHTML = `Meta ultrapassada em ${money - meta}`
+        }else{
+            resultado.innerHTML = ' Parabéns, meta alcançada!'
+        }
+
+
+    }
+
+</script>
