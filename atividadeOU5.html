@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade OU 5</title>
+</head>
+<body>
+
+    <h3>Informe a temperatura</h3>
+        <input placeholder="Temperatura" id="in_tempo">
+
+        <br><br>
+
+        <button onclick="clima()">Analisar clima</button>
+    
+</body>
+</html>
+
+<script>
+
+    function clima(){
+        var tempo = Number(in_tempo.value);
+
+        if(tempo < 21){
+            alert('Alerta de desconforto!');
+            alert('As pessoas vão ter hipotermia');
+        }else if(tempo == 21 || tempo == 23 || tempo == 34){
+            
+        }else{
+            alert('Alerta de desconforto!')
+            alert('As pessoas vão derreter')
+        }
+    }
+
+</script>

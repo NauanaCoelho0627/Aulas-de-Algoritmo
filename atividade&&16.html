@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 16</title>
+</head>
+<body>
+    
+    <h4>Informe a altura inicial dos pilotos</h4>
+        <input placeholder="Altura Inicial" id="in_piloto" onkeyup="validar()">
+
+    <h4>Informe a altura final dos dos pilotos</h4>
+        <input placeholder="Altura Final" id="in_piloto2" onkeyup="validar()">
+
+        <br><br>
+    _______________________________________________________________
+
+    <h4>Informe a altura inicial dos jogadores</h4>
+        <input placeholder="Altura inicial" id="in_atleta" onkeyup="validaR()">
+
+    <h4>Informe a altura final dos jogadores</h4>
+        <input placeholder="Altura final" id="in_atleta2" onkeyup="validaR()">
+
+        <br><br>
+
+        <button onclick="selecionar()">Selecionar</button>
+</body>
+</html>
+
+<script>
+
+    function validar(){
+        var piloto = Number(in_piloto.value);
+        var piloto2 = Number(in_piloto2.value);
+
+        if(piloto < 1 && piloto2 < piloto){
+            alert('NÃO SEGUIR EM FRENTE')
+        }
+    }
+
+    function validaR(){
+        var atleta = Number(in_atleta.value);
+        var atleta2 = Number(in_atleta2.value);
+
+        if(atleta < 1.5 && atleta2 < atleta){
+            alert('NÃO SEGUIR EM FRENTE')
+        }
+    }
+
+    
+
+</script>

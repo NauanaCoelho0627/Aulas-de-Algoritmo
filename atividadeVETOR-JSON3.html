@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade VETOR/JSON 3</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .anya{
+        margin-top: -20%;
+        margin-left: 45%;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://3.bp.blogspot.com/-wQuSbcJI4zc/Xfv62DqEulI/AAAAAAAASqo/rv4TJUCUF8sjRvACZQKllD1E0dYjZ0eIQCLcBGAsYHQ/w919/nezuko-cute-kimetsu-no-yaiba-uhdpaper.com-4K-3.1425-wp.thumbnail.jpg" alt="">
+    </div>
+    
+    <h2>Indique o resultado</h2>
+        <select id="sel_resultado">
+            <option value="vitoria">Vitoria</option>
+            <option value="derrota">Derrota</option>
+            <option value="empate">Empate</option>
+        </select>
+
+            <br><br>
+
+    <button onclick="registrar()">Registrar Jogo</button>
+
+        <br><br>
+
+    <button onclick="atualizar()">Atualizar</button>
+
+        <br><br>
+
+    <h4>Inforeme o numero do jogo que gostaria de receber o resultado</h4>
+        <input id="in_partida" onkeyup="pesquisa()" type="number">
+
+            <br><br>
+
+    <div id="div_partida"></div>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+
+    var jogo = []
+
+    function registrar(){
+        var resultado = sel_resultado.value
+
+        jogo.push(resultado)
+
+    }
+
+    function atualizar(){
+       var vitoria = 0;
+       var empate = 0;
+       var derrota = 0;
+
+       for(var i = 0; i < jogo.length ; i++){
+
+        var atual = jogo[i]
+
+            if(atual == 'vitoria'){
+                vitoria++
+            }
+        } 
+
+        for(var i = 0; i < jogo.length ; i++){
+
+        var atual = jogo[i]
+
+            if(atual == 'empate'){
+                empate++
+            }
+        } 
+
+        for(var i = 0; i < jogo.length ; i++){
+
+        var atual = jogo[i]
+
+            if(atual == 'derrota'){
+                derrota++
+            }
+        }
+
+        var aproveitamento = ((vitoria * 3) / ((vitoria + empate + derrota) * 3)) * 100
+
+        div_partida.innerHTML = `O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas
+        <br><br>
+        Pontuação total: ${vitoria * 3} pontos
+        <br><br>
+        Aproveitamento: ${aproveitamento.toFixed(2)}%`
+    }
+
+    function pesquisa(){
+        var pesquisa = Number(in_partida.value)
+        if(jogo.length >= pesquisa){
+            div_resultado.innerHTML = `<br> ${jogo[pesquisa-1]}`
+        }else{
+            div_resultado.innerHTML = `<br> ${pesquisa}° jogo ainda não ocorreu`
+        }
+    }
+
+</script>

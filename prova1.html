@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quioste do Fabio</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+</style>
+<body>
+
+
+        <h3>Informe a quantidade de água engarrafada</h3>
+        <input placeholder="Água engarrafada" id="in_garrafa">
+
+    <h3>Informe a quantidade de coco fechado</h3>
+        <input placeholder="Coco fechado" id="in_coco">
+
+        <br><br>
+
+    <button onclick="abrir()">Abrir Quiosque</button>
+
+    <div id="div_abriu">
+        <h3>-------------Estoque-------------<h3>
+            <h4>Água engarrafada:</h4>
+            <h4>Coco fechado:</h4>
+    </div>
+    
+    <div id="div_venda">
+                <h2>--------------------Registo das Operações de Venda--------------</h2>
+                <h3>Entre com a quantidade vendida</h3>
+                    <input id="in_venda" placeholder="Quantidade de Venda">
+
+                <h3>Informe o produto vendido</h3>
+                    <select id="sel_produto">
+                            <option value=""></option>
+                            <option value="g">Água engarrafada</option>
+                            <option value="c">Coco fechado</option>
+                    </select>
+
+                    <br><br>
+                    <button onclick="regi()">Registrar Venda</button>
+                    <button onclick="encerrar()" style="background-color: red">Encerrar o Turno</button>
+
+                    <br><br>
+            </div>
+            <div id="div_registro"> </div>
+
+
+</body>
+</html>
+
+<script>
+    var garrafa = 0;
+    var cocofechado = 0;
+    var contadorGarrafa = 1;
+    var contadorCoco = 1;
+
+
+    function abrir(){
+        var agua = Number(in_garrafa.value);
+        var coco = Number(in_coco.value);
+
+        if(agua < 100){
+            alert('Com essa quantidade de água engarrafada não dá para abrir o quioste')
+        }else if(coco < 200){
+            alert('Com essa quantidade de coco fechado não dá para abrir o quioste')
+        }else if(agua >= 100 && agua <= 1000){
+            alert('Engarrafe mais água de coco')
+        }else if(coco >= 200 && coco <= 2000){
+            alert('Compre mais coco')
+        }else{
+            garrafa = agua;
+            cocofechado = coco;
+            div_abriu.innerHTML = `<h3>-------------Estoque-------------<h3>
+            <h4>Água engarrafada: ${garrafa}</h4>
+            <h4>Coco fechado: ${cocofechado}</h4>
+            `
+        }
+    }
+
+        function regi(){
+            var produto = sel_produto.value;
+            var prodVenda = Number(in_venda.value)
+
+            if(produto == 'g'){
+                
+                if(garrafa > 0){
+                    garrafa = garrafa - prodVenda;
+                div_registro.innerHTML += `<br>Com a venda de ${prodVenda} de Água engarrafada o saldo no estoque é de ${garrafa}`
+
+                div_abriu.innerHTML = `<h3>-------------Estoque-------------<h3>
+                <h4>Água engarrafada: ${garrafa}</h4>
+                <h4>Coco fechado: ${cocofechado}</h4>`               
+
+                while(contadorGarrafa <= prodVenda){
+                    contadorGarrafa++
+                }
+                }else{
+                    alert('Impossivel efetuar venda, !!!!sem estoque!!!!')
+                    alert('Estoque mais para prosseguir com a venda')
+                }
+
+
+            }else if(produto == 'c'){
+                if(cocofechado > 0){
+                    cocofechado = cocofechado - prodVenda;
+                div_registro.innerHTML += `<br>Com a venda de ${prodVenda} de Coco fechado o saldo no estoque é de ${cocofechado}`
+
+                div_abriu.innerHTML = `<h3>-------------Estoque-------------<h3>
+                <h4>Água engarrafada: ${garrafa}</h4>
+                <h4>Coco fechado: ${cocofechado}</h4>`
+
+                while(contadorCoco <= prodVenda){
+                    contadorCoco++
+                }
+
+                }else{
+                    alert('Impossivel efetuar venda, !!!!sem estoque!!!!')
+                    alert('Estoque mais para prosseguir com a venda') 
+                }
+
+            }else{
+                alert('Informe corretamente os valores para continuar')
+            }
+            
+        }
+
+        function encerrar(){
+            var total = contadorCoco + contadorGarrafa;
+            var porcenGarrafa = Number((contadorGarrafa * 100) / total);
+            var porcenCoco = Number((contadorCoco * 100) / total);
+
+            if(total > 2){
+            
+                div_registro.innerHTML = `<h2>Vendas de água engarrafada</h2>
+            <p>Saldo em estoque: ${garrafa}</p>
+            <p>quantidade de vendas: ${contadorGarrafa}</p>
+            <p>Porcentagem das vendas: ${porcenGarrafa.toFixed(0)}%</p>
+            
+            <br><br>
+            
+            <h2>Vendas de coco fechado</h2>
+            <p>Saldo em estoque: ${cocofechado}</p>
+            <p>quantidade de vendas: ${contadorCoco}</p>
+            <p>Porcentagem das vendas: ${porcenCoco.toFixed(0)}%</p>`
+            }
+
+        }
+    
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade For 9</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe quantas xicaras de café com leite vc já tomou</h3>
+        <input placeholder="Xicaras de café" id="in_cafe">
+
+        <br><br>
+
+    <button onclick="ver()">Ver a quantidade</button>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function ver(){
+        var cafe = Number(in_cafe.value);
+
+        for(contador = 0; contador < cafe; contador ++){
+            div_resul.innerHTML += `<img src="https://scontent.fcgh37-1.fna.fbcdn.net/v/t31.18172-8/14855945_986661748106141_5578871664361687164_o.jpg?stp=cp0_dst-jpg_e15_p320x320_q65&_nc_cat=100&ccb=1-7&_nc_sid=2d5d41&_nc_ohc=lkVMwVidR10AX-a8iNB&_nc_ht=scontent.fcgh37-1.fna&oh=00_AT9eL32ARB-5i4-fiZJic0vRIHeTkyFCFqasMc5vhxHGmw&oe=637BFD70" height="200px" widht="300px">
+            
+            <img src="https://lh6.googleusercontent.com/-hXOuZIojIfw/UQGXwLSUYHI/AAAAAAAARWU/ElGoeNYjfQA/s320/blogger-image--1751233207.jpg" height="200px" widht="300px">
+            
+            <img src="https://lh6.googleusercontent.com/-hXOuZIojIfw/UQGXwLSUYHI/AAAAAAAARWU/ElGoeNYjfQA/s320/blogger-image--1751233207.jpg" height="200px" widht="300px"> <br>`
+        }
+    }
+
+</script>

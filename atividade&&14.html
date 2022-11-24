@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 14</title>
+</head>
+<body>
+    
+    <h2>Carregar bilhete</h2>
+
+    <h3>Informe a quantidade que deseja recarregar</h3>
+        <input placeholder="recarregar" id="in_recarga">
+
+        <br><br>
+
+    <button onclick="comprar()">Comprar</button>
+
+        <br><br>
+
+        <div id="div_recarga"></div>
+
+</body>
+</html>
+<script>
+
+    function comprar(){
+        var re = Number(in_recarga.value);
+        var cota = Number(re * 4.40);
+
+        if(re >= 8 && re <= 19){
+            div_recarga.innerHTML = `valor a pagar R$${(cota * 0.97).toFixed(2)}`
+        }else if(re >= 20 && re <= 49){
+            div_recarga.innerHTML = `valor a pagar R$${(cota * 0.95).toFixed(2)}`
+        }else if(re == 50){
+            div_recarga.innerHTML = `valor a pagar $R${(cota * 0.93).toFixed(2)}`
+        }else{
+            alert('Quantidade inválida para o Fidelidade!')
+        }
+    }
+
+</script>

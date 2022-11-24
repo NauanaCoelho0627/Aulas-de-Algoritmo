@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 21</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+</style>
+<body>
+
+    <h2>Partiu Faculdade</h2>
+
+    <h3>Informe a quantidade de onibus</h3>
+        <input placeholder="Onibus" id="in_onibus">
+
+    <h3>Informe a quantidade de trem</h3>
+        <input placeholder="Trem" id="in_trem">
+
+    <h3>Informe a quantidade de metro</h3>
+        <input placeholder="Metro" id="in_metro">
+
+        <br><br>
+
+        <button onclick="trajeto()">#Partiu Trajeto</button>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function trajeto(){
+        var trem = Number(in_trem.value);
+        var onibus = Number(in_onibus.value);
+        var metro = Number(in_metro.value);
+        var T = 1;
+        var O = 1;
+        var M = 1;
+
+        if(trem < 0 && onibus < 0 && metro < 0){
+            alert('Erro preencha os campos corretamente')
+            div_resul.innerHTML = " ";
+        }
+
+        while(O <= onibus){
+
+            if(O == 2){
+                div_resul.innerHTML += `<p style="color: red">Pegando o ${O}° buzão  Começando a cansar </p>`;
+            }else if(O >= 3){
+                div_resul.innerHTML += `<p style="color: red">Pegando o ${O}° buzão  Ja cansado </p>`;
+            }else{
+                div_resul.innerHTML += `<p style="color: red">Pegando o ${O}° buzão </p>`;
+            }
+
+            O++
+        }     
+        while(T <= trem){
+            
+            if(T == 2){
+                div_resul.innerHTML += `<p style="color: green">Pegando o ${T}° trem Começando a cansar </p>`;
+            }else if(T >= 3){
+                div_resul.innerHTML += `<p style="color: green">Pegando o ${T}° trem Ja cansado </p>`;
+            }else{
+                div_resul.innerHTML += `<p style="color: green">Pegando o ${T}° trem</p>`;
+            }
+
+            T++
+        }
+        while(M <= metro){
+
+            if(M == 2){
+                div_resul.innerHTML += `<p style="color: blue">Pegando o ${M}° metrô Começando a cansar </p>`;
+            }else if(M >= 3){
+                div_resul.innerHTML += `<p style="color: blue">Pegando o ${M}° metrô Ja cansado </p>`;
+            }else{
+                div_resul.innerHTML += `<p style="color: blue">Pegando o ${M}° metrô</p>`;
+            }
+
+            M++
+        }
+   
+        if(trem == 0 && onibus == 0 && metro == 0){
+            div_resul.innerHTML = '<p style="color: yellow">OPS... Parece que esse veio de helicóptero!!!  Kkk</p>'
+        }else{
+            if(onibus == 0){
+                div_resul.innerHTML += '<br>não precisou pegar o buzão';  
+            }
+            if(trem == 0){
+                div_resul.innerHTML += '<br>não precisou pegar o trem';
+            }
+            if(metro == 0){
+                div_resul.innerHTML += '<br>não precisou pegar o metro';
+            }
+        }
+
+    }
+
+</script>

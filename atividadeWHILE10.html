@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 10</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        margin-top: 2%;
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe um valor inicial</h3>
+        <input placeholder="Valor inicial" id="in_valorINI">
+
+    <h3>Informe um valor final</h3>
+        <input placeholder="Valor final" id="in_valorFIN">
+
+        <br><br>
+
+        <button onclick="par()">S2 par</button>
+
+        <br><br>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function par(){
+        var inicial = Number(in_valorINI.value);
+        var final = Number(in_valorFIN.value);
+        var contagem = inicial;
+        var inter = final;
+
+        while(contagem <= inter){
+            if(contagem % 2 == 0){
+                div_resul.innerHTML += `<br> ${contagem++}`
+                contagem++;
+            }
+        }
+    }
+
+</script>

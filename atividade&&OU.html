@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && OU</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+    <h1>Arroz perfeito</h1>
+
+    <h3>Escolha o tipo de arroz</h3>
+        <select id="sel_arroz">
+            <option value=""></option>
+            <option value="b">Arroz Branco</option>
+            <option value="i">Arroz integral</option>
+        </select>
+
+    <h3>Informe o tempo de cozimento (em minutos)</h3>
+        <input placeholder="Tempo de cozimento" id="in_tempo">
+
+    <h3>Informe a quantidade de sal (em gramas)</h3>
+        <input placeholder="Quantidade de sal" id="in_grama">
+
+            <br><br>
+
+        <button onclick="arroz()">Ver arroz</button>
+
+            <br><br>
+
+        <div id="div_arroz"></div>
+        <div id="div_image"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function arroz(){
+        var arroz = sel_arroz.value;
+        var tempo = Number(in_tempo.value);
+        var grama = Number(in_grama.value);
+
+        if(arroz == 'b' && tempo == '10' && grama <= 10){
+            div_arroz.innerHTML = 'Arroz Perfeito <br><br> <img src="https://img.itdg.com.br/tdg/images/recipes/000/000/770/323683/323683_original.jpg?w=1200">'
+
+        }else {
+            div_arroz.innerHTML = 'Seu arroz não está perfeito <br><br> <img src="https://noticiasdatv.uol.com.br/media/uploads/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min.jpg">'
+        }
+        
+        if(arroz == 'i' && tempo == '20' && grama <=15){
+            div_arroz.innerHTML += 'Arroz perfeito <br><br> <img src="https://conteudo.imguol.com.br/c/entretenimento/7e/2022/05/18/arroz-integral-1652905182670_v2_900x506.jpg">'
+        }else{
+            div_arroz.innerHTML = 'Seu arroz não está perfeito <br><br> <img src="https://noticiasdatv.uol.com.br/media/uploads/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min.jpg">'
+        }
+    }
+
+</script>

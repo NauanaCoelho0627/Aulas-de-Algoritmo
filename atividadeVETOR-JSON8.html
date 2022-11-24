@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade VETOR/JSON 8</title>
+</head>
+<body>
+
+    <div id="part1">
+        <h2>Análise de Performace de Alunos - Registro</h2>
+
+    <p>Entre com o Nome do Aluno: </p><input id="in_nome">
+    <p>Entre com a Nota do Aluno: </p><input placeholder="0 - 10" id="in_nota">
+    <p>Entre com a Nota do Aluno: </p><input placeholder="0 - 10" id="in_nota2">
+    <p>Entre com a Nota do Aluno: </p><input placeholder="0 - 10" id="in_nota3">
+
+        <br><br>
+
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    </div>    
+    
+</body>
+</html>
+<script>
+    var notas= {
+        nome: [],
+        nota1: [],
+        nota2: [],
+        nota3: []
+    }
+    
+
+    function registrar(){
+        div_resultado.innerHTML = ''
+
+        if(in_nome.value == '' || in_nota.value < 0 || in_nota.value > 10 || in_nota2.value < 0 || in_nota2.value > 10 || in_nota3.value < 0 || in_nota3.value > 10){
+            alert('informe corretamente os campos para seguir em frente')
+        }else{
+            notas.nome.push(in_nome.value)
+            notas.nota1.push(Number(in_nota.value))
+            notas.nota2.push(Number(in_nota2.value))
+            notas.nota3.push(Number(in_nota3.value))
+        }
+
+        for(i = notas.nome.length-1; i >= 0; i--){
+            div_resultado.innerHTML += `Nome: ${notas.nome[i]}<br> Nota1: ${notas.nota1[i]}<br> Nota2: ${notas.nota2[i]}<br> Nota3: ${notas.nota3[i]}<br><br>`
+        }
+
+    }
+
+    function analisar(){
+        part1.innerHTML = `</h2>Análise de perfomase de Aluno - Pesquisa</h2>
+        <p>Entre com o intervalo de Nota: </p><input placeholder="De:" id="in_de"> <input placeholder="Até:" id="in_ate">
+        <p>Nota desejada: </p><input id="in_desejo">
+            <br><br>
+        
+        <button onclick="pesquisar()">Pesquisar</button>
+        
+            <br><br>
+
+        <div id="div_resultado"></div>`        
+    }
+
+    function pesquisar(){
+        div_resultado.innerHTML = ''
+
+        var de = Number(in_de.value)
+        var ate = Number(in_ate.value)
+        var dedinho = 0;
+        var media = Number()
+        var qtd = Number(notas.nome.length)
+        var maior = 0;
+        var menor = 10000000000;
+        var desejo = Number(in_desejo.value)
+        
+
+        if(desejo == 1){
+            var Ndesejo = notas.nota1
+        }else if(desejo == 2){
+            var Ndesejo = notas.nota2
+        }else if(desejo == 3){
+            var Ndesejo = notas.nota3
+        }else{
+            alert('Nota invalida')
+        }
+
+        if(de < 0 || de > 10 || ate < 0 || ate > 10){
+            alert('Informe um valor valido para prosseguir')
+        }else if(de > ate){
+                alert('O de deve ser menor ou igual ao valor de até')
+            }else{
+                for(i = 0; i <= ate; i++){
+
+                    if(Ndesejo[i] >= de && Ndesejo[i] <= ate){
+                        div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${Ndesejo[i]}<br>`
+
+                        dedinho++
+                    }
+
+                    if(Ndesejo[i] > maior){
+                        maior = Ndesejo[i];
+
+                        var maiorNota = Ndesejo[i]
+                    }
+                
+                    if(Ndesejo[i] < menor){
+                        menor = Ndesejo[i];
+
+                        var menorNota = Ndesejo[i]
+                    }
+
+                    var atual = Ndesejo[i]
+                    media =+ atual;
+                }
+
+                // var media = (total / nota.length);
+
+                div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+                Total de alunos listado: ${dedinho}<br>
+                Maior Nota = ${maiorNota}<br>
+                Menor Nota = ${menorNota}<br>
+                Média da Nota = ${media}`
+            }
+        }
+    
+</script>

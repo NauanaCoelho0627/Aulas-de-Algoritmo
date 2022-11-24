@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 12</title>
+</head>
+<body>
+
+    <h2>Inscrição Pilotos</h2>
+
+    <h4>Informe o intervalo da altura desejada para os pilotos</h4>
+        <input placeholder="Altura desejada inicial" id="in_altInicial">
+            <br><br>
+        <input placeholder="Altura desejada final" id="in_altFinal">
+
+        <br><br>
+    ___________________________________________________________________________________
+    
+    <h4>Informe o nome do piloto</h4>
+        <input placeholder="Nome Piloto" id="in_nome">
+
+    <h4>Informe a altura do piloto</h4>
+        <input placeholder="Altura do Piloto" id="in_altura">
+
+            <br><br>
+
+        <button onclick="cad()">Cadastrar</button>
+
+            <br><br>
+
+        <div id="div_altura"></div>
+
+</body>
+</html>
+
+<script>
+
+    function cad(){
+        var altInicial = Number(in_altInicial.value);
+        var altFinal = Number(in_altFinal.value);
+        var nome = in_nome.value;
+        var altura = Number(in_altura.value);
+
+        if(altInicial > 1 && altFinal > altInicial){
+            if(altura >= altInicial && altura <= altFinal){
+                div_altura.innerHTML += `<br>O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto`;
+            }else{
+                div_altura.innerHTML += `<br>Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos`;
+            }
+        }else{
+            alert("Não seguir em frente")
+        }
+    }
+
+</script>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade TERNARIO 3</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .anya{
+        margin-top: -20%;
+        margin-left: 45%;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://3.bp.blogspot.com/-wQuSbcJI4zc/Xfv62DqEulI/AAAAAAAASqo/rv4TJUCUF8sjRvACZQKllD1E0dYjZ0eIQCLcBGAsYHQ/w919/nezuko-cute-kimetsu-no-yaiba-uhdpaper.com-4K-3.1425-wp.thumbnail.jpg" alt="">
+    </div>
+
+    <h3>Informe a sua idade</h3>
+        <input id="in_idade" onkeyup="mostrar()">
+
+            <br><br>
+
+    <div id="div_resultado" style="display: none">
+
+        Já passou pela infância: <b id="b_infancia"></b>
+
+            <br><br>
+
+        Já passou pela adolescência: <b id="b_adolescencia"></b>
+
+            <br><br>
+
+        Já é um idoso: <b id="b_idoso"></b>
+
+            <br><br>
+
+        TOTAL DE PONTOS: <b id="b_pontos"></b>
+
+    </div>
+</body>
+</html>
+<script>
+
+    function mostrar(){
+        var idade = Number(in_idade.value)
+        var pontos = 0
+
+        var infancia = idade > 0 ? true : false
+        var adolescencia = idade > 12 ? true : false
+        var idoso = idade >= 65 ? true : false
+
+        pontos += infancia ? 10 : 0
+        pontos += adolescencia ? 20 : 0
+        pontos += idoso ? 50 : 0
+
+        div_resultado.style.display = 'block'
+
+        b_infancia.innerHTML = infancia
+        b_adolescencia.innerHTML = adolescencia
+        b_idoso.innerHTML = idoso
+        b_pontos.innerHTML = pontos
+    }
+
+</script>

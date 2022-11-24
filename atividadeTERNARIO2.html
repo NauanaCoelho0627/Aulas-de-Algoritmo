@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade TERNARIO 2</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .anya{
+        margin-top: -20%;
+        margin-left: 45%;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://3.bp.blogspot.com/-wQuSbcJI4zc/Xfv62DqEulI/AAAAAAAASqo/rv4TJUCUF8sjRvACZQKllD1E0dYjZ0eIQCLcBGAsYHQ/w919/nezuko-cute-kimetsu-no-yaiba-uhdpaper.com-4K-3.1425-wp.thumbnail.jpg" alt="">
+    </div>
+
+    <h3>Informe o seu login</h3>
+        <input id="in_login">
+
+    <h3>Informe a sua senha</h3>
+        <input id="in_senha">
+
+    <h3>Informe o codigo de seguranca</h3>
+        <input id="in_codigo">
+
+            <br><br>
+
+        <button onclick="entrar()">Entrar</button>
+
+            <br><br>
+
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+<script>
+
+    function entrar(){
+        var login = in_login.value
+        var senha = in_senha.value
+        var codigo = Number(in_codigo.value)
+
+        var frase = login == 'SPTECH' && senha == 'SCHOOL' || codigo == 595 ? 'Usuário autenticado com sucesso' : 'Falha na autenticação'
+
+        div_resultado.innerHTML = frase
+    }
+
+</script>

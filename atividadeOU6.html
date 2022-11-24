@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade OU 6</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+        background-color: aquamarine;
+    }
+    #div_click{
+        margin-top: 50px;
+        background-color: black;
+        opacity: 80%;
+        color: white;
+    }
+    .container{
+        height: 200px;
+        width: 300px;
+        background-color: black;
+        opacity: 80%;
+        position: absolute;
+        margin-left: 38%;
+        margin-top: 10%;
+    }
+</style>
+<body>
+<div class="container">
+    <div id="div_click">
+        Você clicou 0 vezes
+    </div>
+
+        <br><br>
+
+    <button onclick="clicar()">Clicar</button>
+</div>
+
+</body>
+</html>
+<script>
+    var click = 0;
+
+    function clicar(){
+        click ++;
+
+        if(click == 3 || click == 4 || click == 7 || click == 10){
+            div_click.innerHTML = `Você clicou ${click} vezes e Juliana gosta desse número`
+        }
+    }
+
+
+</script>

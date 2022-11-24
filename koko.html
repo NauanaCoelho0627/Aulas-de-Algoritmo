@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select id="sel_filtro">
+        <option value="nome">Nome</option>
+        <option value="maior">Nota maior que</option>
+        <option value="menor">Nota menor  que</option>
+    </select>
+
+        <br><br>
+
+    <input type="text" id="in_filtro">
+
+        <br><br>
+
+    <button onclick="filtr()">Aplicar Filtro</button>
+    
+</body>
+</html>
+
+var mediaFinal = media / notas.nome.length
+
+                div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+                Total de alunos listado: ${dedinho}<br>
+                Maior Nota = ${maiorNota}<br>
+                Menor Nota = ${menorNota}<br>
+                Média da Nota = ${mediaFinal}`
+
+                if(filtroT == 'nome'){
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] >= de && notas.nota[i] >= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                        dedinho++
+                        media += notas.nota[i]
+
+                    if(notas.nota[i] > maior){
+                        maior = notas.nota[i];
+
+                        var maiorNota = notas.nota[i]
+                    }
+                
+                    if(notas.nota[i] < menor){
+                        menor = notas.nota[i];
+
+                        var menorNota = notas.nota[i]
+                    }
+
+                    var atual = notas.nota[i]
+                    media =+ atual;
+                        
+                    }} else if(FiltroT == 'maior'){
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] > filtoV){
+                            
+                        if(notas.nota[i] >= de && notas.nota[i] >= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                        dedinho++
+                        media += notas.nota[i]
+
+                    if(notas.nota[i] > maior){
+                        maior = notas.nota[i];
+
+                        var maiorNota = notas.nota[i]
+                    }
+                
+                    if(notas.nota[i] < menor){
+                        menor = notas.nota[i];
+
+                        var menorNota = notas.nota[i]
+                    }
+
+                    var atual = notas.nota[i]
+                    media =+ atual;
+                        
+                            }
+                        }
+                    }
+                }else{
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] > filtoV){
+                            
+                        if(notas.nota[i] >= de && notas.nota[i] >= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                        dedinho++
+                        media += notas.nota[i]
+
+                    if(notas.nota[i] > maior){
+                        maior = notas.nota[i];
+
+                        var maiorNota = notas.nota[i]
+                    }
+                
+                    if(notas.nota[i] < menor){
+                        menor = notas.nota[i];
+
+                        var menorNota = notas.nota[i]
+                    }
+
+                    var atual = notas.nota[i]
+                    media =+ atual;
+                        
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}}
+
+
+
+for(var i = 0; i < notas.nome.length; i++){
+    if(notas.nota[i] >= de && notas.nota[i] >= ate){
+        div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+        dedinho++
+        media += notas.nota[i]
+
+        if(notas.nota[i] > maior){
+        maior = notas.nota[i];
+
+        var maiorNota = notas.nota[i]
+        }
+
+        if(notas.nota[i] < menor){
+        menor = notas.nota[i];
+
+        var menorNota = notas.nota[i]
+        }
+
+        var atual = notas.nota[i]
+        media =+ atual;
+
+        div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+Total de alunos listado: ${dedinho}<br>
+Maior Nota = ${maiorNota}<br>
+Menor Nota = ${menorNota}<br>
+Média da Nota = ${mediaFinal}`
+    
+    }else if(Tfiltro == 'maior'){
+        for(var i = 0; i < notas.nome.length; i++){
+        if(notas.nota[i] > Vfiltro){
+        
+            if(notas.nota[i] >= de && notas.nota[i] >= ate){
+                div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                dedinho++
+                media += notas.nota[i]
+
+                if(notas.nota[i] > maior){
+                maior = notas.nota[i];
+
+                var maiorNota = notas.nota[i]
+                }
+
+                if(notas.nota[i] < menor){
+                menor = notas.nota[i];
+
+                var menorNota = notas.nota[i]
+                }
+
+                var atual = notas.nota[i]
+                media =+ atual;
+    
+              }
+            }
+        }
+        div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+Total de alunos listado: ${dedinho}<br>
+Maior Nota = ${maiorNota}<br>
+Menor Nota = ${menorNota}<br>
+Média da Nota = ${mediaFinal}`
+    }else{
+        for(var i = 0; i < notas.nome.length; i++){
+        if(notas.nota[i] > Vfiltro){
+        
+            if(notas.nota[i] >= de && notas.nota[i] >= ate){
+            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                dedinho++
+                media += notas.nota[i]
+
+            if(notas.nota[i] > maior){
+            maior = notas.nota[i];
+
+            var maiorNota = notas.nota[i]
+            }
+
+            if(notas.nota[i] < menor){
+            menor = notas.nota[i];
+
+            var menorNota = notas.nota[i]
+            }
+
+            var atual = notas.nota[i]
+            media =+ atual;
+            }
+        }
+    }
+
+    div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+Total de alunos listado: ${dedinho}<br>
+Maior Nota = ${maiorNota}<br>
+Menor Nota = ${menorNota}<br>
+Média da Nota = ${mediaFinal}`
+    }
+}
+}
+
+}
+}

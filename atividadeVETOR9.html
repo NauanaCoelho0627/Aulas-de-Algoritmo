@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Vetor 9</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 45%;
+        margin-top: 5%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://psverso.com.br/wp-content/uploads/2022/09/quem-e-nezuko-demon-slayer-kimetsu-no-yaiba.webp" alt="">
+    </div> 
+      
+    <h4>Cadastre seus Projeots</h4>
+    <input id="in_projeto">
+
+        <br><br>
+
+    <button onclick="cadastrar()">Cadastrar Projeto</button>
+
+        <br><br>
+
+    <button onclick="ver()">Ver projetos</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+
+    var projetos = []
+
+    function cadastrar(){
+
+        div_resultado.innerHTML = ''
+
+        if(in_projeto.value != ''){
+            projetos.push(in_projeto.value)
+
+            if(projetos.length > 0 && projetos.length <=4){
+        
+        div_resultado.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional JUIOR<br>`
+
+    }else if(projetos.length >= 5 && projetos.length <= 12){
+
+        div_resultado.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional PLENO des do ${projetos[4]} projeto<br>`
+
+    }else{
+
+        div_resultado.innerHTML = `Você já fez ${projetos.length} projetos. Por isso você é um profissional SENIOR des do ${projetos[12]} projeto<br>`
+
+    }
+        }else{
+            alert('Informe um projeto para prosseguir')
+        }
+
+    }
+
+    function ver(){
+        div_mostrar.innerHTML = ''
+
+        for(var i = projetos.length-1; i >= 0; i--){
+            var projetosAtual = projetos[i]
+
+            div_mostrar.innerHTML += `<br>${projetosAtual}`
+        }
+    }
+</script>

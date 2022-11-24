@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade && OU 4</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+    <div id="div_tela">
+        <h3>Informe a nota do aluno</h3>
+        <input placeholder="nota" id="in_nota">
+
+    <h3>Infofrme a frequencia do aluno</h3>
+        <input placeholder="frequencia" id="in_freq">
+
+        <br><br>
+
+        <button onclick="analisar()">Analisar aluno</button>
+
+        <div id="div_resul"></div>
+    </div>
+</body>
+</html>
+<script>
+
+    function analisar(){
+        var nota = Number(in_nota.value);
+        var fre = Number(in_freq.value);
+
+        var validarNOTA = nota > 0 && nota <= 10;
+        var validarFRE = fre > 0 && nota < 100;
+
+        if(!validarNOTA){
+            alert('Onde já se viu nota <0 ou >10?!')
+            
+            div_tela.innerHTML = " "
+        }
+        if(!validarFRE){
+            alert('Onde já se viu frequência <0 ou >100?!')
+            
+            div_tela.innerHTML = " "
+        }
+
+        if(nota == 0 && nota < 6){
+            div_resul.innerHTML = 'Aluno ficou abaixo da média';
+        }else if(nota >= 6 && nota < 8){
+            div_resul.innerHTML = 'Aluno acima da média'
+        }else{
+            div_resul.innerHTML = 'Aluno acima da média'
+        }
+
+        if(fre < 75){
+            div_resul.innerHTML += '<br> Aluno reprovado por frequência'
+        }else{
+            div_resul.innerHTML += '<br> Aluno aprovado por frequência'
+        }
+    }
+
+</script>

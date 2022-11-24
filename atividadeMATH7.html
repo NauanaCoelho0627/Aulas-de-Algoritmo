@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Math.Random 7</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <button onclick="sorteio()">Sortear numero</button>
+
+            <br><br>
+
+    <button onclick="cabal()">Quero um cabalístico</button>
+
+            <br><br>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+    var numero = 0;
+    function sorteio(){
+        var sorteado = parseInt(1 + Math.random().toFixed(2) * 15);
+
+        div_resul.innerHTML = `${sorteado}`
+
+        numero = sorteado
+    }
+
+    function cabal(){
+        var cabalistico = numero == 3 || numero ==4 || numero == 7 || numero == 10 || numero == 12
+
+        if(!cabalistico){
+            div_resul.innerHTML += '<br> Ah, me dá um número bom na próxima!'
+        }else{
+            div_resul.innerHTML += '<br> Eu S2 números cabalísticos!'
+        }
+    }
+
+</script>

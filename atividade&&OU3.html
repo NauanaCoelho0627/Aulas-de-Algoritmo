@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && OU 3</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe a marca da tv</h3>
+        <select id="sel_marca">
+            <option value=""></option>
+            <option value="s">Samsung</option>
+            <option value="l">LG</option>
+            <option value="m">Mondial</option>
+            <option value="b">Britânia</option>
+        </select>
+
+    <h3>Informe o valor da tv</h3>
+        <input placeholder="preço da tv" id="in_money">   
+
+        <br><br>
+        
+        <button onclick="validar()">Validar</button>
+        
+        <br><br>
+
+        <div id="div_resul"></div>
+</body>
+</html>
+<script>
+
+    function validar(){
+        var tv = sel_marca.value;
+        var money = Number(in_money.value);
+
+        if(money < 800 && money > 2000){
+            div_resul.innerHTML = 'TV fora da faixa de preço';
+        }else if(money >= 800 && money <= 200 && tv == 'm' || tv == 'b'){
+            div_resul.innerHTML = 'Na faixa de preço, porém marca não confiável'
+        }else if(money < 800){
+            div_resul.innerHTML += '<br> Preço baixo demais!'
+        }else if(money > 2000){
+            div_resul.innerHTML += '<br> TV cara demais, infelizmente'
+        }else{
+            div_resul.innerHTML = 'Essa TV pode entrar na sua lista!'
+        }
+    }
+
+</script>

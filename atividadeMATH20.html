@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Math.Random 10</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <div id="div_resul">
+        <p>Jogador 1: 0</p>
+
+        <p>Jogador 2: 0</p>
+
+        <p>Empate: 0 </p>
+
+    </div>
+
+    
+    <button onclick="jogar()">Jogar</button>
+    
+</body>
+</html>
+<script>
+    var jogador1 = 0;
+    var jogador2 = 0;
+    var empate = 0
+
+    function jogar(){
+        var sorteado1 = parseInt(1 + Math.random() * 6)
+        var sorteado2 = parseInt(1 + Math.random() * 6)
+
+        if(sorteado1 > sorteado2){
+            jogador1 = jogador1 + 1;
+        }else if(sorteado1 < sorteado2){
+            jogador2 = jogador2 + 1;
+        }else{
+            empate = empate + 1;
+        }
+        
+
+        if(jogador1 > jogador2){
+            div_resul.innerHTML = `<p>Jogador 1: ${jogador1}</p>
+                <p>Jogador 2: ${jogador2}</p>
+                <p>Empate: ${empate} </p>
+                
+                <h5>O jogador 1 esta vencendo</h5>`
+        }else if(jogador1 > jogador2){
+            div_resul.innerHTML = `<p>Jogador 1: ${jogador1}</p>
+                <p>Jogador 2: ${jogador2}</p>
+                <p>Empate: ${empate} </p>
+                
+                <h5>O jogador 2 esta vencendo</h5>`
+        }else{
+            div_resul.innerHTML = `<p>Jogador 1: ${jogador1}</p>
+                <p>Jogador 2: ${jogador2}</p>
+                <p>Empate: ${empate} </p>
+                
+                <h5>empate</h5>`
+        }
+
+    }
+
+
+</script>

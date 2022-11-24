@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Math.Random 3</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <button onclick="dados()">Jogar Dado</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function dados(){
+        var sorteado = parseInt(1 + Math.random() * 6)
+
+        if(sorteado == 1){
+            div_resul.innerHTML = '<img src="https://cdn-icons-png.flaticon.com/512/0/751.png" height="120px">'
+        }else if(sorteado == 2){
+            div_resul.innerHTML = '<img src="https://cdn-icons-png.flaticon.com/512/0/2.png" height="120px">'
+        }else if(sorteado == 3){
+            div_resul.innerHTML = '<img src="http://www.i2clipart.com/cliparts/a/9/e/5/clipart-dado-3-256x256-a9e5.png" height="120px">'
+        }else if(sorteado == 4){
+            div_resul.innerHTML = '<img src="https://openclipart.org/image/800px/96097" height="120px">'
+        }else if(sorteado == 5){
+            div_resul.innerHTML = '<img src="http://www.i2clipart.com/cliparts/2/3/3/b/clipart-dado-5-256x256-233b.png" height="120px">'
+        }else{
+            div_resul.innerHTML = '<img src="https://dobbelsteen.virtuworld.net/img/6c.gif" height="120px">'
+        }
+    }
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade OU 3</title>
+</head>
+<body>
+
+    <h3>Informe a sua renda individual</h3>
+        <input placeholder="Renda individual" id="in_individual">
+
+    <h3>Informe a sua renda familiar</h3>
+        <input placeholder="Renda familiar" id="in_familiar">
+
+        <br><br>
+
+        <button onclick="beneficio()">Terei o beneficio</button>
+    
+</body>
+</html>
+
+<script>
+
+    function beneficio(){
+        var rendaI = Number(in_individual.value);
+        var rendaF = Number(in_familiar.value);
+
+        if(rendaI <= 2000 || rendaF <= 3000){
+            alert('Você terá direito ao auxilio')
+        }else{
+            alert('Sem direito ao auxilio')
+        }
+    }
+
+</script>

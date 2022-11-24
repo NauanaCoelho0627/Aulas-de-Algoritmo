@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade &&</title>
+</head>
+<body>
+
+    <h2>Feira de quinta-feira</h2>
+
+    <h3>Informe o nome da fruta</h3>
+        <input placeholder="Fruta" id="in_fruta">
+
+    <h3>Informe o preço da fruta</h3>
+        <input placeholder="Valor" id="in_valor">
+
+        <br><br>
+    
+    <button onclick="comprar()">Vou Comprar?</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function comprar(){
+        var fruta = in_fruta.value;
+        var valor = Number(in_valor.value);
+
+        if( fruta == "uva" && valor <8.50){
+            div_resul.innerHTML = 'Vou comprar!'
+        }else{
+            div_resul.innerHTML = 'Sem fruta hoje :('
+        }
+    }
+
+</script>

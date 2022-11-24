@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Math.Random 2</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <button onclick="time()">Sortear time</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function time(){
+        var sorteado = parseInt(1 + Math.random() * 4)
+
+        if(sorteado == 1){
+            div_resul.innerHTML = '<img src="https://piauihoje.com/migration/public_html/media/image_bank/2016/8/escudo-do-sao-paulo-ficou-em-1o-lugar-na-lista-do-daily-mail.jpg" height="120px">'
+        }else if(sorteado == 2){
+            div_resul.innerHTML = '<img src="https://i.pinimg.com/236x/b3/aa/61/b3aa6162920d9a2af801e172e10d1872.jpg" height="120px">'
+        }else if(sorteado == 3){
+            div_resul.innerHTML = '<img src="https://lh3.googleusercontent.com/-Q-V2qmBD5gM/Vamep0Bd2YI/AAAAAAAADwY/1Ei55AbM3L4/s714/palmeiras.png" height="120px">'
+        }else{
+            div_resul.innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/commons/9/92/LogoSantosFC.png" height="120px">'
+        }
+    }
+
+</script>

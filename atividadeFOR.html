@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade For</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h2>Repetindo mantras</h2>
+
+    <button onclick="repetir5()">Repetir 5x</button>
+
+    <h3>Informe quantas vezes você deseja repetir</h3>
+        <input id="in_repeticoes">
+
+        <br><br>
+
+        <button onclick="repetir()">Repetir N vezes</button>
+
+        <br><br>
+
+    <div id="div_repeticoes"></div>
+    
+</body>
+</html>
+<script>
+
+        function repetir5(){
+            div_repeticoes.innerHTML = ''
+
+            // var contador = 0 -- Part1 - Setup/ inicialização do for (apenas 1 vez)
+            // contador < 5 -- Part2 - Condicional de repetição (eexpressão logica)
+            // contador++ -- Part3 - Ultima linha virtual (ultima linha dentro do for - servido para qualquer coisa que vá ser execultada)
+            //dependendo do que eu fizer na parte 3 posso transformar meu for num lupe infinito
+            for(var contador = 0; contador < 5; contador++){
+                div_repeticoes.innerHTML += 'Foco, força e fé<br>'
+            }
+
+            // for(;;){ } - lupe infiniito
+            //cada parte e opicional sendo que eu posso escolher qual parte colocar dentro da () mas mantendo os dois ;
+        }
+
+        function repetir(){
+            var repete = Number(in_repeticoes.value)
+
+            div_repeticoes.innerHTML = ''
+
+            for(var contador = 0; contador < repete; contador++){
+                div_repeticoes.innerHTML += `${contador+1} - Todo ano tem mundial<br>`
+            }
+        }
+
+</script>

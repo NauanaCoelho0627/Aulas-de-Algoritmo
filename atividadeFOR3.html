@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade For 3</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe um valor menor que 100</h3>
+        <input placeholder="Valor menor que 100" id="in_valor">
+
+        <br><br>
+
+        <button onclick="contar()">Contar</button>
+
+            <br><br>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function contar(){
+        var valor = Number(in_valor.value);
+
+        if(valor > 100){
+            alert('Informe um valor valido menor que 100 para prosseguir')
+        }else{
+            for(contador = 5; contador <= valor; contador++){
+                    div_resul.innerHTML += `${contador}<br>` 
+                
+            }
+        }
+    }
+
+</script>

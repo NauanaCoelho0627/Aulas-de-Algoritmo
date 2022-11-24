@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade VETOR/JSON 2</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .anya{
+        margin-top: -20%;
+        margin-left: 45%;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://3.bp.blogspot.com/-wQuSbcJI4zc/Xfv62DqEulI/AAAAAAAASqo/rv4TJUCUF8sjRvACZQKllD1E0dYjZ0eIQCLcBGAsYHQ/w919/nezuko-cute-kimetsu-no-yaiba-uhdpaper.com-4K-3.1425-wp.thumbnail.jpg" alt="">
+    </div>
+
+    <h2>Informe o nome dos seus filhos</h2>
+        <input id="in_nome">
+
+            <br><br>
+
+        <button onclick="cadastrar()">Cadastrar</button>
+
+            <br><br>
+
+        <button onclick="atualizar()">Atualizar Familia</button>
+
+            <br><br>
+
+        <div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+
+    // var filho = []
+
+    // function cadastrar(){
+    //     var posicao = filho.length+1
+    //     var nome = in_nome.value
+
+    //     while(posicao > 0){
+    //         if(nome == filho+1){
+    //             alert('aaaaaa')
+    //         }else{
+    //             filho.push(nome)
+    //         }
+    //     }
+    // }
+     
+    
+    var filho = []
+
+    function cadastrar(){
+        var j = 0;
+
+        for(i = 0; i < filho.length; i++){
+            if(in_nome.value == filho[i]){
+                j++
+            }
+        }
+
+        if(j > 0){
+            alert('Você não pode ter mais de um filho com o mesmo nome')
+        }else{
+            filho.push(in_nome.value)
+        }
+
+   
+    }
+
+    function atualizar(){
+        div_resultado.innerHTML = `Filhos Cadastrados: ${filho.length} <br>
+        Seu custo mensal será aproximadamente R$${(filho.length * 3000).toFixed(2)} se colocar eles em escola particular ou R$${(filho.length * 1500).toFixed(2)} se eles estudarem em escola pública`
+    }
+
+
+
+</script>

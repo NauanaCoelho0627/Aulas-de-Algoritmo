@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 15</title>
+</head>
+<body>
+
+    <h2>Bora casa</h2>
+
+    <h3>Informe quantos anos trabalhou</h3>
+        <input placeholder="anos" id="in_anos">
+
+    <h3>Informe quantos kilos a sua plantação rendeu</h3>
+        <input placeholder="kilos" id="in_kilos">
+
+    <h3>Informe quantos dias faltoi</h3>
+        <input placeholder="faltas" id="in_faltas">
+
+        <br><br>
+
+        <button onclick="match()">Deu match?</button>
+
+        <br><br>
+
+        <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function match(){
+        var ano = Number(in_anos.value);
+        var kilos = Number(in_kilos.value);
+        var faltas = Number(in_faltas.value);
+
+        if(ano >= 5 && kilos >= 300 && faltas <= 5){
+            div_resultado.innerHTML = `Minha filha será sua!`
+        }else{
+            div_resultado.innerHTML = `Deu ruim! Trabalhe mais 2 anos`
+        }
+    }
+
+</script>

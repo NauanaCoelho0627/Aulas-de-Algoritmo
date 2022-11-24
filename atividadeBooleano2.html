@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Booleano 2</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+    h3{
+        margin-top: 5%;
+    }
+</style>
+<body>
+
+    <h3>Informe a sua altura</h3>
+        <input placeholder="Altura" id="in_altura">
+        
+        <br><br>
+
+        <button onclick="analisar()">Analisar para esportes</button>
+
+        <br><br>
+
+        <div id="div_altura"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar(){
+        var altura = Number(in_altura.value);
+
+        var piloto = altura < 1.60;
+        var velejador = altura == 1.60;
+        var atleta = altura > 1.60 && altura <= 1.85;
+
+        if(piloto){
+            div_altura.innerHTML = 'Pode tentar ser piloto(a) de corrida';
+        }
+
+        if(velejador){
+            div_altura.innerHTML = 'Pode tentar ser velejador(a)'
+        }
+
+        if(atleta){
+            div_altura.innerHTML = 'Pode tentar ser jogador de futebol ou handbol'
+        }
+    }
+
+</script>

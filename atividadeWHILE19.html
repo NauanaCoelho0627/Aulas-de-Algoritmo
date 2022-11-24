@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 19</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+</style>
+<body>
+
+    <h2>Partiu Faculdade</h2>
+
+    <h3>Informe a quantidade de onibus</h3>
+        <input placeholder="Onibus" id="in_onibus">
+
+    <h3>Informe a quantidade de trem</h3>
+        <input placeholder="Trem" id="in_trem">
+
+    <h3>Informe a quantidade de metro</h3>
+        <input placeholder="Metro" id="in_metro">
+
+        <br><br>
+
+        <button onclick="trajeto()">#Partiu Trajeto</button>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function trajeto(){
+        var trem = Number(in_trem.value);
+        var onibus = Number(in_onibus.value);
+        var metro = Number(in_metro.value);
+        var contadorT = 1;
+        var contadorO = 1;
+        var contadorM = 1;
+
+        while(contadorO <= onibus){
+            div_resul.innerHTML += `<p style="color: red">Pegando o ${contadorO}° buzão </p>`;
+
+            contadorO++
+        }     
+        while(contadorT <= trem){
+            div_resul.innerHTML += `<p style="color: green">Pegando o ${contadorT}° trem</p>`;
+            
+            contadorT++
+        }
+        while(contadorM <= metro){
+            div_resul.innerHTML += `<p style="color: blue">Pegando o ${contadorM}° metrô</p>`;
+
+            contadorM++
+        }
+   
+    }
+
+</script>

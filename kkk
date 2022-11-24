@@ -1,0 +1,10 @@
+
+<div class="container">
+
+    <h2>Informe a temperatura</h2>
+        <input placeholder="Temperatura" id="in_temp">
+
+            <br><br>
+
+        <button onclick="situacao()">Ver situação!</button>
+</div>*/

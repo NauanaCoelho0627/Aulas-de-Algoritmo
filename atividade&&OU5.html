@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && OU 5</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+    </style>
+<body>
+
+    <h2>Iniciante selecione o tipo do seu Pokemon</h2>
+        <select id="sel_iniciante">
+            <option value=""></option>
+            <option value="f">Fogo</option>
+            <option value="p">Planta</option>
+            <option value="a">Água</option>
+        </select>
+
+        <br>
+
+    <h2>Oponente selecione o tipo do seu Pokemon</h2>
+    <select id="sel_oponente">
+        <option value=""></option>
+        <option value="f">Fogo</option>
+        <option value="p">Planta</option>
+        <option value="a">Água</option>
+    </select>
+
+        <br><br>
+
+    <button onclick="lutar()">Batalhar!</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+
+        <br><br>
+
+    <div id="div_contagem"></div>
+
+        
+</body>
+</html>
+
+<script>
+
+    var vitoria = 0;
+    var derrota = 0;
+    var empate = 0;
+
+    function lutar(){
+        var ini = sel_iniciante.value;
+        var opo = sel_oponente.value;
+
+        if(ini == 'a' && opo == 'f' || ini == 'f' && opo == 'p' || ini == 'p' && opo == 'a'){
+            ++vitoria
+            div_contagem.innerHTML = `Vitórias do Iniciante: ${vitoria} / Derrotas do Iniciante: ${derrota} / Empates: ${empate}`;
+
+            div_resul.innerHTML = 'O iniciante venceu';
+        }else if(ini == opo && opo == ini){
+            ++empate
+            div_contagem.innerHTML = `Vitórias do Iniciante: ${vitoria} / Derrotas do Iniciante: ${derrota} / Empates: ${empate}`
+
+            div_resul.innerHTML = `Empate`
+        }else{
+            ++derrota
+            div_contagem.innerHTML = `Vitórias do Iniciante: ${vitoria} / Derrotas do Iniciante: ${derrota} / Empates: ${empate}`
+
+            div_resul.innerHTML = `O iniciante perdeu`
+        }
+    }
+
+</script>

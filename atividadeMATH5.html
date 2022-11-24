@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Math.Random 5</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <button onclick="jogo()">Jo ken po</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function jogo(){
+        var sorteado = parseInt(1 + Math.random() * 3);
+
+        if(sorteado == 1){
+            div_resul.innerHTML = '<img src="https://images.tcdn.com.br/img/img_prod/606732/pedra_moledo_clara_lajinha_2287_1_19e67d614fa6d82cad27d2db277722c2_20220214143128.jpeg" height="200px">'
+        }else if(sorteado == 2){
+            div_resul.innerHTML = '<img src="https://img.freepik.com/fotos-gratis/vista-do-papel-amarrotado-branco_1194-7544.jpg?w=2000" height="200px">'
+        }else{
+            div_resul.innerHTML = '<img src="https://cdn.awsli.com.br/600x450/104/104159/produto/15967322/68594e5174.jpg" height="200px">'
+        }
+    }
+
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Vetor 6</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 45%;
+        margin-top: 5%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://psverso.com.br/wp-content/uploads/2022/09/quem-e-nezuko-demon-slayer-kimetsu-no-yaiba.webp" alt="">
+    </div> 
+      
+    <h4>Informe seus filmes favoritos</h4>
+    <input id="in_filmes">
+
+    <br><br>
+
+    <button onclick="cadastrar()">Cadastrar Filmes</button>
+
+    <br><br>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+    var filmes = []
+
+    function cadastrar(){
+        filmes.push(in_filmes.value)
+
+        div_resultado.innerHTML = ''
+
+        for(var i = 0; i < filmes.length; i++){
+            var filmeAtual = filmes[i]
+
+            div_resultado.innerHTML += `${filmeAtual}<br>`
+        }
+    }
+</script>

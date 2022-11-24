@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 6</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        margin-top: 2%;
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe o nome da pessoa amada</h3>
+        <input placeholder="Amado(a)" id="in_nome">
+
+    <h3>Informa a quantidade de vezes que deseja enviar a mensagem</h3>
+        <input id="in_vezes">
+            
+            <br>
+
+        <button onclick="amor()">Enviar amor</button>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function amor(){
+        var nome = in_nome.value;
+        var vezes = Number(in_vezes.value);
+        var amor = 1;
+
+        while (amor <= vezes){
+            div_resul.innerHTML += `<br>${nome} EU TE AMO`
+            ++amor
+        }
+    }
+
+</script>

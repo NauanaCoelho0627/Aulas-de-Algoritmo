@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 2</title>
+</head>
+<body>
+
+    <h2>Escolha um combo de proteinas</h2>
+        <select id="sel_prote" onchange="validar()">
+            <option value="ovo">Ovo</option>
+            <option value="soja">Soja</option>
+            <option value="carne">Carne</option>
+        </select>
+
+    <h2>Escolha um combo de sobremesa</h2>
+        <select id="sel_sobre" onchange="validar()">
+            <option value="pudim">Pudim</option>
+            <option value="petit">Petit Gateau</option>
+            <option value="brigadeiro">Brigadeiro de soja</option>
+        </select>
+    
+</body>
+</html>
+
+<script>
+
+    function validar(){
+        var proteina = sel_prote.value;
+        var sobremesa = sel_sobre.value;
+
+        if(proteina == 'soja' && sobremesa == 'brigadeiro'){
+            alert('Você poderia ser vegano(a)')
+        }else{
+            alert('Você não poderia ser vegano(a)')
+        }
+    }
+
+</script>

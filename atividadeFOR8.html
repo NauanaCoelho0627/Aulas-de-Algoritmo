@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade For 8</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe a quantidade de Coca-Cola que vc ja bebeu na vida</h3>
+        <input placeholder="Quantidade de Coca-Cola" id="in_coca">
+
+        <br><br>
+
+    <button onclick="ver()">Ver quantidade</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script> 
+
+    function ver(){
+        var coca = Number(in_coca.value);
+
+        div_resul.innerHTML = ''
+
+        for(contador = 0; contador < coca; contador++){
+            div_resul.innerHTML += '<img src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/1984-refrigerante-coca-cola-lata-350ml.jpg?fm=webp&s=933deefcdcfcb4b1484ca4912f212c5a" height="200px" widht="300px">'
+        }
+    }
+
+</script>

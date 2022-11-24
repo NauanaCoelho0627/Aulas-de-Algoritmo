@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade TERNARIO</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .anya{
+        margin-top: -20%;
+        margin-left: 45%;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://3.bp.blogspot.com/-wQuSbcJI4zc/Xfv62DqEulI/AAAAAAAASqo/rv4TJUCUF8sjRvACZQKllD1E0dYjZ0eIQCLcBGAsYHQ/w919/nezuko-cute-kimetsu-no-yaiba-uhdpaper.com-4K-3.1425-wp.thumbnail.jpg" alt="">
+    </div>
+
+    <h3>Informe a primeira nota do aluno</h3>
+        <input placeholder="Nota 1" id="in_nota1">
+
+    <h3>Informe a segunda nota do aluno</h3>
+        <input placeholder="Nota 2" id="in_nota2">
+
+    <h3>Informe a frequencia do aluno</h3>
+        <input placeholder="Frequencia" id="in_freq">
+
+            <br><br>
+
+        <button onclick="media()">Calcular Media</button>
+
+            <br><br>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+
+    function media(){
+        var nota1 = Number(in_nota1.value)
+        var nota2 = Number(in_nota2.value)
+        var freq = Number(in_freq.value)
+        var media = (nota1 + nota2) / 2
+
+        var frase = media >= 6 && freq >= 75 ? 'Parabéns, você passou' : 'Tente outra vez'
+
+        div_resultado.innerHTML = frase
+    }
+
+</script>

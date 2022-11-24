@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Booleano 4</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+    h2{
+        margin-top: 5%;
+    }
+</style>
+<body>
+
+    <h2>Avaliar idade!</h2>
+
+    <h3>Informe sua idade</h3>
+        <input placeholder="Idade" id="in_idade">
+        
+        <div id="div_ponto">
+            <p>Pontos: 0</p>
+        </div>
+
+        <button onclick="analisar()">Avaliar</button>
+
+        <br><br>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+    
+   var pontos = 0;
+
+    function analisar(){
+        var idade = Number(in_idade.value);
+
+        var crianca = idade < 12;
+        var adolecente = idade <= 18;
+        var idoso = idade >= 65;
+        
+        
+        // criança
+        if(!crianca){
+            div_resul.innerHTML = 'Já passou pela infância: true <br>';
+
+            pontos = pontos + 10;
+
+            div_ponto.innerHTML = `<p>Pontos: ${pontos}</p>`;
+        }
+        if(crianca){
+            div_resul.innerHTML = 'Já passou pela infância: false <br>' 
+        }
+
+        // adolecente
+        if(!adolecente){
+            div_resul.innerHTML += 'Já passou pela adolescência: true <br>';
+
+            pontos = pontos + 20;
+
+            div_ponto.innerHTML = `<p>Pontos: ${pontos}</p>`;
+        }
+        if(adolecente){
+            div_resul.innerHTML += 'Já passou pela adolescência: false <br>' 
+        }
+
+        // idoso
+        if(idoso){
+            div_resul.innerHTML += 'Já é um idoso: true <br>';
+
+            pontos = pontos + 50;
+
+            div_ponto.innerHTML = `<p>Pontos: ${pontos}</p>`;
+        }
+        if(!idoso){
+            div_resul.innerHTML += 'Já é um idoso: false <br>' 
+        }
+
+    }
+
+</script>

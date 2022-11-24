@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && OU 6</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe o nome do produto</h3>
+        <input placeholder="nome do produto" id="in_nome">
+
+    <h3>Informe o valor do produto</h3>
+        <input placeholder="valor do produto" id="in_valor">
+
+    <h3>Informe o cupom de desconto</h3>
+        <input placeholder="cupom de desconto" id="in_cupom">
+
+            <br><br>
+
+        <button onclick="comprar()">Comprar</button>
+    
+            <br><br>
+
+        <div id="div_resul"></div>
+</body>
+</html>
+
+<script>
+
+    function comprar(){
+    var nome = in_nome.value;
+    var valor = Number(in_valor.value);
+    var desconto = in_cupom.value;
+
+
+    var produto = nome.toLowerCase();
+    
+
+    if(nome == ""){
+        alert('Informe o nome do produto para continuar')
+    }
+    if(valor == 0){
+        alert('informe o valor do produto para continuar')
+    }    
+    if(desconto == " "){
+        alert('informe o cumpom para continuar')
+    }
+
+    if((produto == 'tenis' || produto == 'livros' || produto == 'material escolar') && desconto == 'GERAL_10'){
+        valor = valor * 0.90;
+        div_resul.innerHTML = `Cupom para produtos em geral aplicado! Preço final será R$${valor}`
+
+    }else if((produto == 'celular' || produto == 'notebook' || produto == 'tablet') && desconto == 'TECH_19'){
+        valor = valor * 0.81;
+        div_resul.innerHTML = `Cupom para produtos em geral aplicado! Preço final será R$${valor}`
+
+    }else{
+        div_resul.innerHTML = 'Cupom não aplicado! Preencha os campos e tente novamente!'
+    }
+}
+</script>

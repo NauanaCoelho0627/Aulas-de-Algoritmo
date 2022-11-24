@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 15</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+</style>
+<body>
+
+    <h3>Informe a sua idade</h3>
+        <input placeholder="Sua idade aqui!" id="in_idade" onkeyup="idade()">
+    
+        <br><br>
+
+        <div id="div_resul"></div>
+</body>
+</html>
+
+<script>
+
+    function idade(){
+     div_resul.innerHTML = "";
+
+        var i = Number(in_idade.value);
+        var contador = 0;
+
+        while(contador <= i){
+
+            if(contador <= 4){
+                div_resul.innerHTML += `<br> ${contador} anos - Primeira Infância`
+            }else if(contador <= 6){
+                div_resul.innerHTML += `<br> ${contador} anos - Pré-escola`
+            }else if(contador <= 10){
+                div_resul.innerHTML += `<br> ${contador} anos - Segunda Infância`
+            }else if(contador <= 18){
+                div_resul.innerHTML += `<br> ${contador} anos - Adolescência`
+            }else if(contador <= 50){
+                div_resul.innerHTML += `<br> ${contador} anos - Adulto`
+            }else if(contador <= 100){
+                div_resul.innerHTML += `<br> ${contador} anos - Melhor idade`
+            }else{
+                div_resul.innerHTML += `<br> ${contador} anos - Matusalém`
+            }
+
+            contador++
+        }
+    }
+
+</script>

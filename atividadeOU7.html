@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade OU 7</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+        background-color: aquamarine;
+    }
+    .container{
+        height: 200px;
+        width: 300px;
+        background-color: black;
+        color: aqua;
+        opacity: 80%;
+        position: absolute;
+        margin-left: 38%;
+        margin-top: 10%;
+    }
+    .container h2{
+        background-color: black;
+        opacity: 80%;
+    }
+</style>
+<body>
+<div class="container">
+    <h2>Calculador de cansaço do aluno SPTech</h2>
+        <select id="sel_transporte">
+            <option value="o">Ônibus</option>
+            <option value="m">Metrô</option>
+            <option value="c">Carro</option>
+            <option value="b">Bicicleta</option>
+            <option value="l">Lotação</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="calcular()">Calcular cansaço</button>
+</div>
+    
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var transp = sel_transporte.value;
+
+        if(transp == 'c' || transp == 'b'){
+            alert('Tá tranquilo')
+        }else if(transp ==  'o' || transp == 'l'){
+            alert('Vish.... vive casando')
+        }else{
+            alert('Um pouco cansado')
+        }
+    }
+
+</script>

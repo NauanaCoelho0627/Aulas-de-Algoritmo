@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade For 5</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe um valor minimo</h3>
+        <input placeholder="Valor maior que 1" id="in_valormin">
+
+    <h3>Informe um valor maximo</h3>
+        <input placeholder="Valor menor que 100" id="in_valormax">
+
+        <br><br>
+
+        <button onclick="contar()">Contar</button>
+
+            <br><br>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function contar(){
+        var valormin = Number(in_valormin.value);
+        var valormax = Number(in_valormax.value);
+
+        if(valormin < 1 || valormax > 100){
+            alert('Informe um valor minimo valido maior que 1 ou valor maximo menor que 100 para prosseguir')
+        }else{
+            for(contador = valormin; contador <= valormax; contador++){
+                    if(contador % 2 != 0){
+                        div_resul.innerHTML += `${contador}<br>` 
+                    }
+                
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 4</title>
+</head>
+<body>
+
+    <h2>AUXILIO BRASIL</h2>
+
+    <h3>Informe a sua renda</h3>
+        <input placeholder="Renda Usuário" id="in_rendaU">
+
+    <h3>Inforeme a renda da sua familia</h3>
+        <input placeholder="Renda Familiar" id="in_rendaF">
+
+            <br><br>
+
+        <button onclick="auxilio()">Verificar ajuda!</button>
+
+</body>
+</html>
+
+<script>
+
+    function auxilio(){
+        var rendaU = Number(in_rendaU.value);
+        var rendaF = Number(in_rendaF.value);
+
+        if(rendaU <= 1050 && rendaF <= 2100){
+            alert("Você terá direito!")
+        }else{
+            alert("Você não terá direito!")
+        }
+    }
+
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 11</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        margin-top: 2%;
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+    .resul{
+        display: flex;
+    }
+    img{
+        height: 20vh;
+        width: 20%;
+        padding: 3px;
+    }
+</style>
+<body>
+
+    <h3>Informe a quantidade de Mundias da FIFA</h3>
+        <input placeholder="Mundias" id="in_vezes">
+
+    <br><br>
+
+    <button onclick="ver()">Ver troféus de mundiais FIFA</button>
+
+    <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function ver(){
+        var i = Number(in_vezes.value);
+        var contagem = 1;
+
+        while(contagem <= i){
+            div_resul.innerHTML += '<img src="https://gametimes.com.br/wp-content/uploads/2019/06/cup2_banner.png">'
+            contagem++
+        }
+
+        if(i == 0){
+            div_resul.innerHTML = '<img src="https://cdn.ome.lt/7z32Y7Mkdq2OWwnVMbUqBWkR0PU=/1200x630/smart/extras/conteudos/faker-crying.jpg">'
+        }
+    }
+
+</script>

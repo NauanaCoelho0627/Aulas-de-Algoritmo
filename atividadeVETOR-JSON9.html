@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade VETOR/JSON 9</title>
+</head>
+<body>
+
+
+    <div id="part1">
+        <h2>Análise de Performace de Alunos - Registro</h2>
+
+    <p>Entre com o Nome do Aluno: </p><input id="in_nome">
+    <p>Entre com a Nota do Aluno: </p><input placeholder="0 - 10" id="in_nota">
+
+        <br><br>
+
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    </div>    
+    
+</body>
+</html>
+<script>
+    var notas= {
+        nome: [],
+        nota: []
+    }
+    
+
+    function registrar(){
+        div_resultado.innerHTML = ''
+
+        if(in_nome.value == '' || in_nota.value < 0 || in_nota.value > 10){
+            alert('informe corretamente os campos para seguir em frente')
+        }else{
+            notas.nome.push(in_nome.value)
+            notas.nota.push(Number(in_nota.value))
+        }
+
+        for(i = notas.nome.length-1; i >= 0; i--){
+            div_resultado.innerHTML += `Nome: ${notas.nome[i]}<br> nota: ${notas.nota[i]}<br>`
+        }
+
+    }
+
+    function analisar(){
+        part1.innerHTML = `</h2>Análise de perfomase de Aluno - Pesquisa</h2>
+        <p>Entre com o intervalo de Nota: </p><input placeholder="De:" id="in_de"> <input placeholder="Até:" id="in_ate">
+            <br><br>
+        <select id="sel_filtro">
+            <option value="nome">Nome</option>
+            <option value="maior">Nota maior que</option>
+            <option value="menor">Nota menor  que</option>
+        </select>
+
+        <br><br>
+
+    <input type="text" id="in_filtro">
+
+        <br><br>
+
+    <button onclick="filtro()">Aplicar Filtro</button>
+        <br><br>-
+    <button onclick="pesquisar()">Pesquisar</button>
+        
+            <br><br>
+
+        <div id="div_resultado"></div>`        
+    }
+
+    function pesquisar(){
+        div_resultado.innerHTML = ''
+
+        var de = Number(in_de.value)
+        var ate = Number(in_ate.value)
+        var dedinho = 0;
+        var media = 0;
+        var qtd = Number(notas.nome.length)
+        var maior = 0;
+        var menor = 10000000000;
+        
+
+        if(de < 0 || de > 10 || ate < 0 || ate > 10){
+            alert('Informe um valor valido para prosseguir')
+        }else if(de > ate){
+                alert('O de deve ser menor ou igual ao valor de até')
+            }else{
+                for(i = 0; i <= notas.nota.length; i++){
+
+                    if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                        div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                        dedinho++
+                        media += notas.nota[i]
+
+                    }
+
+                    if(notas.nota[i] > maior){
+                        maior = notas.nota[i];
+
+                        var maiorNota = notas.nota[i]
+                    }
+                
+                    if(notas.nota[i] < menor){
+                        menor = notas.nota[i];
+
+                        var menorNota = notas.nota[i]
+                    }
+                }
+
+
+                div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+                Total de alunos listado: ${dedinho}<br>
+                Maior Nota = ${maiorNota}<br>
+                Menor Nota = ${menorNota}<br>
+                Média da Nota = ${media / dedinho}`
+            }
+    }
+
+    function filtro(){
+        div_resultado.innerHTML = '';
+
+        var Tfiltro = sel_filtro.value;
+        var Vfiltro = in_filtro.value;
+        var de = Number(in_de.value)
+        var ate = Number(in_ate.value)
+        var dedinho = 0;
+        var media = 0;
+        var qtd = Number(notas.nome.length)
+        var maior = 0;
+        var menor = 10000000000;
+
+        if(de == "" || ate == ""){
+            if(Tfiltro == 'nome'){
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(Vfiltro == notas.nome[i]){
+                            if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                                div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                                dedinho++
+                                media += notas.nota[i]
+
+                                if(notas.nota[i] > maior){
+                                maior = notas.nota[i];
+
+                                var maiorNota = notas.nota[i]
+                                }
+
+                                if(notas.nota[i] < menor){
+                                menor = notas.nota[i];
+
+                                var menorNota = notas.nota[i]
+                                }
+                            }
+                        }
+                    }
+                } else if(Tfiltro == 'maior'){
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] > Vfiltro){
+        
+                            if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                            dedinho++
+                            media += notas.nota[i]
+
+                            if(notas.nota[i] > maior){
+                            maior = notas.nota[i];
+
+                            var maiorNota = notas.nota[i]
+                            }
+
+                            if(notas.nota[i] < menor){
+                            menor = notas.nota[i];
+
+                            var menorNota = notas.nota[i]
+                            }
+
+                            }
+                        }
+                    }
+        
+                }else{
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] < Vfiltro){
+        
+                            if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                            dedinho++
+                            media += notas.nota[i]
+
+                            if(notas.nota[i] > maior){
+                            maior = notas.nota[i];
+
+                            var maiorNota = notas.nota[i]
+                            }
+
+                            if(notas.nota[i] < menor){
+                            menor = notas.nota[i];
+
+                            var menorNota = notas.nota[i]
+                            }
+                        }
+                    }
+                }
+            }
+            div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+                            Total de alunos listado: ${dedinho}<br>
+                            Maior Nota = ${maiorNota}<br>
+                            Menor Nota = ${menorNota}<br>
+                            Média da Nota = ${media / dedinho}`
+        }else{
+            if(de < 0 || de > 10 || ate < 0 || ate > 10){
+            alert('Informe um valor valido para prosseguir')
+        }else if(de > ate){
+                alert('O de deve ser menor ou igual ao valor de até')
+            }else{
+                if(Tfiltro == 'nome'){
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(Vfiltro == notas.nome[i]){
+                            if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                                div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                                dedinho++
+                                media += notas.nota[i]
+
+                                if(notas.nota[i] > maior){
+                                maior = notas.nota[i];
+
+                                var maiorNota = notas.nota[i]
+                                }
+
+                                if(notas.nota[i] < menor){
+                                menor = notas.nota[i];
+
+                                var menorNota = notas.nota[i]
+                                }
+                            }
+                        }
+                    }
+                } else if(Tfiltro == 'maior'){
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] > Vfiltro){
+        
+                            if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                            dedinho++
+                            media += notas.nota[i]
+
+                            if(notas.nota[i] > maior){
+                            maior = notas.nota[i];
+
+                            var maiorNota = notas.nota[i]
+                            }
+
+                            if(notas.nota[i] < menor){
+                            menor = notas.nota[i];
+
+                            var menorNota = notas.nota[i]
+                            }
+
+                            }
+                        }
+                    }
+        
+                }else{
+                    for(var i = 0; i < notas.nome.length; i++){
+                        if(notas.nota[i] < Vfiltro){
+        
+                            if(notas.nota[i] >= de && notas.nota[i] <= ate){
+                            div_resultado.innerHTML += `O aluno ${notas.nome[i]} ficou com a nota ${notas.nota[i]}<br>`
+
+                            dedinho++
+                            media += notas.nota[i]
+
+                            if(notas.nota[i] > maior){
+                            maior = notas.nota[i];
+
+                            var maiorNota = notas.nota[i]
+                            }
+
+                            if(notas.nota[i] < menor){
+                            menor = notas.nota[i];
+
+                            var menorNota = notas.nota[i]
+                            }
+                        }
+                    }
+                }
+            }
+            div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+                            Total de alunos listado: ${dedinho}<br>
+                            Maior Nota = ${maiorNota}<br>
+                            Menor Nota = ${menorNota}<br>
+                            Média da Nota = ${media / dedinho}`
+       
+            }
+        }
+    }
+
+               
+    
+</script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+    <h2>Informe a linha de onibus</h2>
+
+    <input id="in_onibus">
+
+        <br><br>
+
+    <button onclick="gravar()">Gravar Busão</button>
+
+        <br><br>
+
+    <input placeholder="Pesquisar" id="in_pesquisar">
+    
+        <br><br>
+
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <div id="div_bus"></div>
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    var busao = [];
+
+    function gravar(){
+        busao.push(in_onibus.value);
+
+        div_bus.innerHTML = ''
+
+            for(var contador = busao.length-1; contador >= 0 ; contador--){
+    
+                var atual = busao[contador]
+
+                div_bus.innerHTML += `${atual}<br>`
+            }
+    }
+
+    function pesquisar(){
+        var dedinho = 0;
+        var pesquisa = in_pesquisar.value;
+        var resultado;
+        var vezes = []
+
+        for(var contador = 0; contador < busao.length ; contador++){
+
+            var atual = busao[contador]
+
+            if(atual == pesquisa){
+                vezes.push(contador + 1);
+                dedinho++
+            }
+        }   
+
+        if(dedinho > 0){
+            resultado = `Você já pegou essa linha ${dedinho} vezes, nessa ordem: ${vezes}`
+        }else{
+            resultado = `Você nunca pegou essa linha`
+        }
+
+        div_resul.innerHTML = `<br><br> ${resultado}`
+
+    }
+
+</script>

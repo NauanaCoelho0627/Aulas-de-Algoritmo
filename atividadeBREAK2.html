@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Break</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h2>Informe um valor entre 100</h2>
+        <input placeholder="Entre 0 e 100" id="in_valor">
+
+            <br><br>
+
+        <button onclick="sortear()">Testar minha Sorte</button>
+
+            <br><br>
+
+        <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+    function sortear() {
+        var valor = Number(in_valor.value)
+
+        if (valor < 0 || valor > 100) {
+            alert("Digite de 0 a 100")
+        } else {
+
+            for(var sorteios = 0; sorteios < 20; sorteios++) {
+                var sorteado = parseInt(Math.random() * 101)
+
+                if (sorteado == valor) {
+                    div_resul.innerHTML = `Muito bem, você é uma pessoa de sorte! Seu número saiu no ${sorteios+1}º sorteio`
+                    break
+                } 
+            }
+            if (sorteios == 20) {
+                div_resul.innerHTML = "É, você não tem muita sorte em sorteios, pelo visto" 
+            }
+        }
+    }
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 18</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+</style>
+<body>
+
+    <h3>Informe o numero de Passageiros</h3>
+        <input placegolder="passageiros" id="in_passageiro">
+
+    <h3>Informe a capacidade maxima</h3>
+        <input placegolder="capacidade maxima" id="in_quantidade">
+
+        <br><br>
+
+        <button onclick="carona()">#Partiu Carona</button>
+
+        <div id="div_resul"></div>
+</body>
+</html>
+
+<script>
+
+    function carona(){
+        var i = Number(in_passageiro.value);
+        var contagem = 1;
+        var qtd = Number(in_quantidade.value);
+
+        while(contagem <= i){
+            if(contagem == 1){
+                div_resul.innerHTML = `Entrou o ${contagem}° passageiro que e o motorista`
+            }
+            else if(contagem > 1 && contagem <= qtd){
+                div_resul.innerHTML += `<br>Entrou o ${contagem}° passageiro`
+            }else{
+                div_resul.innerHTML += `<br>O ${contagem}° passageiro tera que esperar`
+            }
+            contagem++
+
+        }
+    }
+
+</script>

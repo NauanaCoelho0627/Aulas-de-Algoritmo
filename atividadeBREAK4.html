@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade BREAK 4</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h2>Escolha qual filme ira ver hoje</h2>
+        <select id="sel_filme">
+            <option value=""></option>
+            <option value="1">DC</option>
+            <option value="2">Marvel</option>
+        </select>
+
+            <br><br>
+
+        <button onclick="ver()">Ver programação</button>
+
+            <br><br>
+    
+        <div id="div_resul"></div>
+
+</body>
+</html>
+<script>
+
+    function ver(){
+        var filme = Number(sel_filme.value);
+
+        div_resul.innerHTML = ''
+
+        for(contador = 1; contador <= 5; contador++){
+            var programacao = parseInt(1 + Math.random() * 5);
+
+            if(programacao == filme){
+                div_resul.innerHTML += `Você verá um filme que gosta no ${contador}º dia<br>`
+            }else{
+                div_resul.innerHTML += `É, ou lê um livro ou assiste um filme que não gosta mesmo<br>`
+            }
+
+        }
+        
+
+
+    }
+
+</script>

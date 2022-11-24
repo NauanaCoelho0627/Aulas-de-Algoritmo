@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade OU 2</title>
+</head>
+<body>
+
+    <h3>Informe a sua nota do Enem</h3>
+        <input placeholder="Nota Enem" id="in_notaEnem">
+
+    <h3>Informe a sua nota do vestibular</h3>
+        <input placeholder="Nota vestibular" id="in_notaVest">
+
+        <br><br>
+
+        <button onclick="avaliar()">Avaliação</button>
+    
+</body>
+</html>
+
+<script>
+
+    function avaliar(){
+        var enem = Number(in_notaEnem.value);
+        var vestibular = Number(in_notaVest.value);
+
+        if(enem >= 800 || vestibular >= 700){
+            alert('Parabéns! Aprovado')
+        }else{
+            alert('Tente semestre que vem')
+        }
+    }
+
+</script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 3</title>
+</head>
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+    .banner{
+        background-image: url(https://fotos.perfil.com/2020/09/30/trim/1280/720/3009clima-1053011.jpg);
+        background-repeat: no-repeat;
+        height: 658px;
+        width: 100%;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .cont{
+        background-color: black;
+        height: 250px;
+        width: 300px;
+        opacity: 70%;
+        margin-top: 15%;
+        padding: 30px;
+    }
+    .cont h2{
+        color: brown;
+        opacity: 100%;
+        font-style: italic;
+        
+    }
+    .cont input{
+        margin-top: 50px;
+        text-align: left;
+    }
+    .cont button{
+        height: 30px;
+        width: 100px;
+        border-radius: 3px;
+        color: black;
+        background-color: black 70%;
+        border-color: 4px brown;
+    }
+</style>
+<body>
+    <div class="banner">
+        <div class="container">
+            <div class="cont">
+                <h2>Informe a temperatura</h2>
+                    <input placeholder="Temperatura" id="in_temp">
+
+                        <br><br>
+
+                    <button onclick="situacao()">Ver situação!</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function situacao(){
+        var temp = Number(in_temp.value);
+
+        if(temp >= 21 && temp <=24){
+            alert("Temperatura confortavél :)")
+        }else{
+            alert("Temperatura desconfortavél :(")
+        }
+    }
+
+</script>

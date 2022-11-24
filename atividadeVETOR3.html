@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Vetor 3</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 45%;
+        margin-top: 5%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://psverso.com.br/wp-content/uploads/2022/09/quem-e-nezuko-demon-slayer-kimetsu-no-yaiba.webp" alt="">
+    </div>
+
+    <h4>Informe os bairro que você já morou</h4>
+        <input id="in_bairro">
+
+        <br><br>
+
+    <button onclick="registrar()">Registrar</button>
+
+    <h4>Informe um numero (a partir de 1) para relembrar um bairro</h4>
+        <input id="in_relembrar" type="number">
+
+        <br><br>
+
+    <button onclick="relembra()">Relembrar</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+<script>
+
+    var bairro = [];
+
+    function registrar(){
+        bairro.push(in_bairro.value)
+    }
+
+
+    function relembra(){
+        var buscar = bairro.length;
+        var busca = in_relembrar.value;
+        var responta = ''
+
+        if(buscar < 0 || busca > buscar){
+            resposta = `Voce ainda não morou num ${busca}° bairro`
+        }else{
+            resposta = `${busca}° morado foi ${bairro[busca-1]}`
+        }
+
+        div_resultado.innerHTML = resposta
+
+    }
+
+</script>

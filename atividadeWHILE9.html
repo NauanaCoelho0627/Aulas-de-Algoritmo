@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE 9</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        margin-top: 2%;
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <h3>Informe uma frase ao sistema</h3>
+        <input placeholder="Sua frase vem aqui" id="in_frase">
+
+    <h3>Informe a quantidade de vezes que repetira</h3>
+        <input placeholder="Vezes a ser repetido" id="in_vezes">
+
+        <br><br>
+
+        <button onclick="papagaio()">Papagaio</button>
+    
+</body>
+</html>
+
+<script>
+
+    function papagaio(){
+        var frase = in_frase.value;
+        var i = Number(in_vezes.value);
+        var contagem = 1;
+
+        while(contagem <= i){
+            alert(`${frase}`)
+            contagem++
+        }
+    }
+
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade For2</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <br><br>
+
+    <button onclick="conte()">Conte de 99 a 1</button>
+
+    <br><br>
+
+    <div id="div_resul"></div>
+    
+</body>
+</html>
+<script>
+
+    function conte(){
+        for(var contador = 99; contador > 0; contador--){
+            div_resul.innerHTML += `${contador}<br>`
+        }
+    }
+
+</script>

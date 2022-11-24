@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+    }
+    img{
+        height: 60%;
+        width: 60%;
+    }
+    input{
+        margin-left: 5px;
+        border:none;
+        outline: none;
+    }
+    .anya{
+        margin-top: -20%;
+        margin-left: 45%;
+    }
+    .imagens{
+        position: fixed;
+        width: 60%;
+        margin-left: 30%;
+    }
+</style>
+<body>
+    <div class="imagens">
+        <img src="https://3.bp.blogspot.com/-wQuSbcJI4zc/Xfv62DqEulI/AAAAAAAASqo/rv4TJUCUF8sjRvACZQKllD1E0dYjZ0eIQCLcBGAsYHQ/w919/nezuko-cute-kimetsu-no-yaiba-uhdpaper.com-4K-3.1425-wp.thumbnail.jpg" alt="">
+
+        <img class="anya" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg--yYJe5ai8sfAVWWRCBrOabAXorpZSJLBJKy2LH5ZIo_abuvT-UfQNq_y3S7m7q0hOsA7CdkIaXFCmLIRfzKrMYArU8oVrNPFvSig7HvmzW7peDs6hzyQHSKFkTMUHRy0qA5Ep9A1KME9Tx4znYufcSRPxPwOZe-MVecQyMx8ai6lfb7WqkER_54i/w1200-h630-p-k-no-nu/Spy%20x%20Family%20anime%20meme%20Anya%20Forger%20HEH%20face.webp" alt="">
+    </div>
+
+
+    <h2>Cadastrar Nome</h2>
+        <input id="in_nome">
+
+    <h2>Cadastrar Telefone</h2>
+        <input id="in_telefone">
+
+        <br><br>
+
+    <button onclick="cadastrar()">Cadastrar</button>
+        
+    
+        <br><br>
+
+    <button onclick="exibir()">Exibir</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+</body>
+</html>
+<script>
+
+    var contatos = []
+
+    function cadastrar(){
+        var contato = {
+            nome: in_nome.value,
+            telefone: in_telefone.value
+        }
+       contatos.push(contato)
+    }
+
+    function exibir(){
+        for (var i = 0; i < contatos.length; i++){
+            var objetoAtual = contatos[i];
+
+            div_resul.innerHTML += `Nome: ${objetoAtual.nome} <br> Telefone: ${objetoAtual.telefone}<br><br>`
+        }
+    }
+</script>

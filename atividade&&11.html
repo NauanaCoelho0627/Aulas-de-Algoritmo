@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 11</title>
+</head>
+<body>
+
+    <h1>Login</h1>
+
+    <h4>Usuario</h4>
+        <input placeholder="Usuario" id="in_usuario">
+
+    <h4>Senha</h4>
+        <input placeholder="Senha" id="in_senha" type="password">
+
+    <h4>Codigo de segurança</h4>
+        <input placeholder="Codigo de segurança" id="in_codigo" type="password">
+
+        <br><br>
+
+        <button onclick="login()">Entrar</button>
+    
+</body>
+</html>
+
+<script>
+
+    function login(){
+        var adm = in_usuario.value;
+        var senha = in_senha.value;
+        var segu = Number(in_codigo.value);
+
+        if(adm == "SPTech" && senha == "digital" && segu == '123'){
+            alert("Usuário autenticado com sucesso")
+        }else{
+            alert("Falha na autenticação")
+        }
+    }
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade && 5</title>
+</head>
+<body>
+
+    <h2>Vamos ver se o seu aluno passou</h2>
+
+    <h3>Informe a nota do seu aluno</h3>
+        <input placeholder="Nota aluno" id="in_nota">
+
+        <br><br>
+
+        <button onclick="nota()">Validar nota</button>
+    
+</body>
+</html>
+
+<script>
+
+    function nota(){
+        var n = Number(in_nota.value);
+
+        if(n >= 0 && n <= 10){
+            alert("Nota válida!")
+        }else{
+            alert("Onde já se viu nota menor que 0 e maior que 10?!")
+        }
+
+        if(n > 6 && n <= 10){
+            alert("Aluno aprovado")
+        }
+    }
+
+</script>

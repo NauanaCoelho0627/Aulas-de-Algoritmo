@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Booleano</title>
+</head>
+<style>
+        *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        padding: 15px 5px;
+        text-align: left;
+        border-radius: 3px;
+    }
+    button{
+        background-color: cadetblue;
+        border: none;
+        padding: 10px;
+    }
+    #form{
+        background-color: darkgray;
+        height: 300px;
+        width: 300px;
+        padding: 5px;
+        margin-left: 38%;
+    }
+</style>
+<body>
+
+    <h1>Login</h1>
+
+    <div id="form">
+        <div id="form1">
+            <h4>Usuario</h4>
+            <input placeholder="usuario" id="in_use">
+        </div>
+
+        <div id="form2">
+            <h4>Senha</h4>
+            <input placeholder="********" id="in_senha" type="password">
+        </div>
+
+            <br><br>
+
+            <button onclick="entrar()">Entrar</button>
+
+            <div id="resul"></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function entrar(){
+        var log = in_use.value;
+        var senha = in_senha.value;
+
+        var confirmaU = log == 'aidimin';
+        var confirmaS = senha == 'seinha';
+
+        if (!confirmaU){
+            form1.innerHTML = `
+            <h4 style="color: red">Usuario - usuario invalido</h4>
+            <input placeholder="usuario" id="in_use">
+            `
+            form2.innerHTML = `
+            <h4>Senha</h4>
+            <input placeholder="********" id="in_senha" type="password">
+            `
+
+            resul.innerHTML = ' '
+       }
+
+       if(!confirmaS){
+        form1.innerHTML = `
+            <h4>Usuario</h4>
+            <input placeholder="usuario" id="in_use">
+            `
+
+        form2.innerHTML = `
+        <h4 style="color: red">Senha - senha invalida</h4>
+            <input placeholder="********" id="in_senha" type="password">
+        `
+
+        resul.innerHTML = '<p style="color: red">Entre em contato com o suporte para recuperar sua senha</p>';
+       }
+
+       if(confirmaU && confirmaS){
+        form1.innerHTML = `
+            <h4>Usuario</h4>
+            <input placeholder="usuario" id="in_use">
+            `
+
+        form2.innerHTML = `
+        <h4>Senha</h4>
+            <input placeholder="********" id="in_senha" type="password">
+        `
+
+        resul.innerHTML = '<p style="color: blue">Usuário autenticado com sucesso!<p>'
+       }
+
+       if(!confirmaU && !confirmaS){
+        form1.innerHTML = `
+            <h4 style="color: red">Usuario - usuario invalido</h4>
+            <input placeholder="usuario" id="in_use">
+            `
+
+        form2.innerHTML = `
+        <h4 style="color: red">Senha - senha invalida</h4>
+            <input placeholder="********" id="in_senha" type="password">
+        `
+       }
+    }
+
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade WHILE</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        margin-top: 5%;
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+    
+    <button onclick="contar()">Contar</button>
+
+        <br><br>
+
+    <div id="div_resul"></div>
+
+</body>
+</html>
+<script>
+
+    function contar(){
+        var contador = 1;
+
+    while (contador < 16){
+        div_resul.innerHTML += `<br> ${contador++}`
+    }
+    }
+
+</script>

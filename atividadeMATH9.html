@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Math.Random 9</title>
+</head>
+<style>
+    *{
+        justify-content: center;
+        text-align: center;
+    }
+    input{
+        border: 3px solid aquamarine;
+        border-radius: 3px;
+        padding: 15px 0;
+    }
+    button{
+        border: 3px solid #89bc67;
+        padding: 10px 5px;
+        background-color: transparent;
+    }
+</style>
+<body>
+
+    <button onclick="nota()">Sortear nota do aluno</button>
+
+            <br><br>
+
+    <button onclick="frequencia()">Sortear frequencia do aluno</button>
+
+            <br><br>
+
+    <button onclick="situacao()">Ver situação do aluno</button>
+
+            <br><br>
+
+        <div id="div_resul"></div>
+        <div id="div_situacao"></div>
+    
+</body>
+</html>
+<script>
+
+    var notaGeral = 0;
+    var FrequenciaGeral = 0;
+
+    function nota(){
+        var nota = 3 + Math.random().toFixed(2) * 10;
+
+        div_resul.innerHTML = `${nota}`
+
+        notaGeral = nota;
+    }
+
+    function frequencia(){
+        var frequencia = 50 + Math.random().toFixed(2) * 50;
+
+        div_resul.innerHTML += `<br> ${frequencia}`
+
+        FrequenciaGeral = frequencia;
+    }
+
+    function situacao(){
+
+        if(notaGeral < 6){
+            div_situacao.innerHTML = '<br> Reprovado por nota'
+        }
+        else if(notaGeral >= 6){
+            div_situacao.innerHTML = '<br> Aprovado por nota'
+        }
+        else if(FrequenciaGeral < 75){
+            div_situacao.innerHTML = '<br> Reprovado por frequencia'
+        }
+        else if(FrequenciaGeral > 75){
+            div_situacao.innerHTML = '<br> Aprovado por frequencia'
+        }
+        
+        if(notaGeral < 6 && FrequenciaGeral < 75){
+            div_situacao.innerHTML = '<br> Você precisa se dedicar mais a escola'
+        }else if(notaGeral >= 6 && FrequenciaGeral >= 75){
+            div_situacao.innerHTML = '<br> Aprovado com sucesso'
+        }
+    }
+
+</script>

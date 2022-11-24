@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade VETOR/JSON 7</title>
+</head>
+<body>
+
+    <div id="part1">
+        <h2>Análise de Performace de Alunos - Registro</h2>
+
+    <p>Entre com o Nome do Aluno: </p><input id="in_nome">
+    <p>Entre com a Nota do Aluno: </p><input placeholder="0 - 10" id="in_nota">
+
+        <br><br>
+
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+
+        <br><br>
+
+    <div id="div_resultado"></div>
+    </div>    
+    
+</body>
+</html>
+<script>
+
+    var nome = []
+    var nota = []
+
+    function registrar(){
+        div_resultado.innerHTML = ''
+
+        if(in_nome.value == '' || in_nota.value < 0 || in_nota.value > 10){
+            alert('informe corretamente os campos para seguir em frente')
+        }else{
+            nome.push(in_nome.value)
+            nota.push(Number(in_nota.value))
+        }
+
+        for(i = nome.length-1; i >= 0; i--){
+            div_resultado.innerHTML += `Nome: ${nome[i]}<br> Nota: ${nota[i]}<br><br>`
+        }
+
+    }
+
+    function analisar(){
+        part1.innerHTML = `</h2>Análise de perfomase de Aluno - Pesquisa</h2>
+        <p>Entre com o intervalo de Nota: </p><input placeholder="De:" id="in_de"> <input placeholder="Até:" id="in_ate">
+            <br><br>
+        
+        <button onclick="pesquisar()">Pesquisar</button>
+        
+            <br><br>
+
+        <div id="div_resultado"></div>`        
+    }
+
+    function pesquisar(){
+        div_resultado.innerHTML = ''
+
+        var de = Number(in_de.value)
+        var ate = Number(in_ate.value)
+        var dedinho = 0;
+        var media = Number()
+        var qtd = Number(nota.length)
+        var maior = 0;
+        var menor = 10000000000;
+
+        if(de < 0 || de > 10 || ate < 0 || ate > 10){
+            alert('Informe um valor valido para prosseguir')
+        }else if(de > ate){
+                alert('O de deve ser menor ou igual ao valor de até')
+            }else{
+                for(i = 0; i <= ate; i++){
+
+                    if(nota[i] >= de && nota[i] <= ate){
+                        div_resultado.innerHTML += `O aluno ${nome[i]} ficou com a nota ${nota[i]}<br>`
+
+                        dedinho++
+                    }
+
+                    if(nota[i] > maior){
+                        maior = nota[i];
+
+                        var maiorNota = nota[i]
+                    }
+                
+                    if(nota[i] < menor){
+                        menor = nota[i];
+
+                        var menorNota = nota[i]
+                    }
+
+                    var atual = nota[i]
+                    media =+ atual;
+                }
+
+                // var media = (total / nota.length);
+
+                div_resultado.innerHTML += `<br><br>Total de alunos registrados: ${qtd}<br>
+                Total de alunos listado: ${dedinho}<br>
+                Maior Nota = ${maiorNota}<br>
+                Menor Nota = ${menorNota}<br>
+                Média da Nota = ${media}`
+            }
+        }
+    
+</script>
